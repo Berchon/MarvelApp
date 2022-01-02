@@ -22,10 +22,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OuS-yR-1Hm">
-                                <rect key="frame" x="0.0" y="132" width="414" height="681"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
-                            </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UeF-aZ-4CW">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
@@ -36,10 +32,24 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g02-Q5-JLs">
-                                        <rect key="frame" x="0.0" y="0.0" width="362" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="44"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HrY-r6-DLj">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIU-eg-Kld" userLabel="botao1">
+                                        <rect key="frame" x="274" y="0.0" width="44" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="nw5-Er-cxg"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lai-lu-aCE" userLabel="botao2">
+                                        <rect key="frame" x="318" y="0.0" width="44" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="A40-n7-LfW"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HrY-r6-DLj" userLabel="botao3">
                                         <rect key="frame" x="362" y="0.0" width="44" height="44"/>
                                         <color key="backgroundColor" systemColor="systemBrownColor"/>
                                         <constraints>
@@ -49,31 +59,43 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="6zT-7p-Dj8"/>
-                                    <constraint firstItem="HrY-r6-DLj" firstAttribute="leading" secondItem="g02-Q5-JLs" secondAttribute="trailing" id="7sU-bI-wIe"/>
-                                    <constraint firstAttribute="bottom" secondItem="HrY-r6-DLj" secondAttribute="bottom" id="SrM-y5-Vbk"/>
-                                    <constraint firstItem="HrY-r6-DLj" firstAttribute="leading" secondItem="g02-Q5-JLs" secondAttribute="trailing" id="rZs-ow-Fju"/>
-                                    <constraint firstAttribute="trailing" secondItem="HrY-r6-DLj" secondAttribute="trailing" constant="8" id="ra4-Yh-8j0"/>
-                                    <constraint firstItem="g02-Q5-JLs" firstAttribute="top" secondItem="cMq-SJ-lcD" secondAttribute="top" id="rzA-6F-cO0"/>
-                                    <constraint firstItem="g02-Q5-JLs" firstAttribute="leading" secondItem="cMq-SJ-lcD" secondAttribute="leading" id="to6-0t-sTl"/>
-                                    <constraint firstItem="HrY-r6-DLj" firstAttribute="top" secondItem="cMq-SJ-lcD" secondAttribute="top" id="ub4-cd-YxY"/>
-                                    <constraint firstAttribute="bottom" secondItem="g02-Q5-JLs" secondAttribute="bottom" id="vVl-hF-mCe"/>
+                                    <constraint firstAttribute="height" constant="44" id="0aI-Eo-9SC"/>
+                                    <constraint firstAttribute="bottom" secondItem="HrY-r6-DLj" secondAttribute="bottom" id="4D5-ja-BeP"/>
+                                    <constraint firstAttribute="bottom" secondItem="Lai-lu-aCE" secondAttribute="bottom" id="EiI-Hd-nDs"/>
+                                    <constraint firstItem="HrY-r6-DLj" firstAttribute="leading" secondItem="Lai-lu-aCE" secondAttribute="trailing" id="GJf-OG-DfD"/>
+                                    <constraint firstItem="Lai-lu-aCE" firstAttribute="leading" secondItem="CIU-eg-Kld" secondAttribute="trailing" id="JAB-cc-5DP"/>
+                                    <constraint firstItem="CIU-eg-Kld" firstAttribute="top" secondItem="cMq-SJ-lcD" secondAttribute="top" id="JAI-G4-37s"/>
+                                    <constraint firstItem="CIU-eg-Kld" firstAttribute="leading" secondItem="g02-Q5-JLs" secondAttribute="trailing" id="L7y-R0-Uki"/>
+                                    <constraint firstAttribute="trailing" secondItem="HrY-r6-DLj" secondAttribute="trailing" constant="8" id="Nr3-Gf-Yya"/>
+                                    <constraint firstAttribute="bottom" secondItem="CIU-eg-Kld" secondAttribute="bottom" id="WjV-Z1-1fQ"/>
+                                    <constraint firstItem="HrY-r6-DLj" firstAttribute="leading" secondItem="Lai-lu-aCE" secondAttribute="trailing" id="ask-FD-Z1f"/>
+                                    <constraint firstItem="g02-Q5-JLs" firstAttribute="top" secondItem="cMq-SJ-lcD" secondAttribute="top" id="dD0-Yu-lFn"/>
+                                    <constraint firstItem="g02-Q5-JLs" firstAttribute="leading" secondItem="cMq-SJ-lcD" secondAttribute="leading" id="eme-8l-oxg"/>
+                                    <constraint firstItem="CIU-eg-Kld" firstAttribute="leading" secondItem="g02-Q5-JLs" secondAttribute="trailing" id="f1V-6g-1mz"/>
+                                    <constraint firstItem="Lai-lu-aCE" firstAttribute="leading" secondItem="CIU-eg-Kld" secondAttribute="trailing" id="fWc-9J-upx"/>
+                                    <constraint firstAttribute="bottom" secondItem="g02-Q5-JLs" secondAttribute="bottom" id="iiR-pX-wHB"/>
+                                    <constraint firstItem="Lai-lu-aCE" firstAttribute="top" secondItem="cMq-SJ-lcD" secondAttribute="top" id="nXQ-cF-wFm"/>
+                                    <constraint firstItem="HrY-r6-DLj" firstAttribute="top" secondItem="cMq-SJ-lcD" secondAttribute="top" id="s6W-4f-Nez"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OuS-yR-1Hm">
+                                <rect key="frame" x="0.0" y="132" width="414" height="681"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Xsn-eX-EcC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="UeF-aZ-4CW" firstAttribute="trailing" secondItem="Xsn-eX-EcC" secondAttribute="trailing" id="76z-Bg-Rig"/>
-                            <constraint firstItem="OuS-yR-1Hm" firstAttribute="top" secondItem="cMq-SJ-lcD" secondAttribute="bottom" id="7Mr-gP-qfH"/>
-                            <constraint firstItem="cMq-SJ-lcD" firstAttribute="leading" secondItem="Xsn-eX-EcC" secondAttribute="leading" id="CGa-qq-lLm"/>
-                            <constraint firstItem="OuS-yR-1Hm" firstAttribute="bottom" secondItem="Xsn-eX-EcC" secondAttribute="bottom" id="Nll-he-uJh"/>
-                            <constraint firstItem="cMq-SJ-lcD" firstAttribute="top" secondItem="UeF-aZ-4CW" secondAttribute="bottom" id="Olk-LO-8My"/>
-                            <constraint firstItem="OuS-yR-1Hm" firstAttribute="trailing" secondItem="Xsn-eX-EcC" secondAttribute="trailing" id="ceN-14-aO2"/>
-                            <constraint firstItem="UeF-aZ-4CW" firstAttribute="leading" secondItem="Xsn-eX-EcC" secondAttribute="leading" id="oK0-6d-iyL"/>
-                            <constraint firstItem="cMq-SJ-lcD" firstAttribute="trailing" secondItem="Xsn-eX-EcC" secondAttribute="trailing" id="p3t-r1-cdZ"/>
-                            <constraint firstItem="UeF-aZ-4CW" firstAttribute="top" secondItem="Xsn-eX-EcC" secondAttribute="top" id="tId-lt-Rlf"/>
-                            <constraint firstItem="OuS-yR-1Hm" firstAttribute="leading" secondItem="Xsn-eX-EcC" secondAttribute="leading" id="zga-1S-Un9"/>
+                            <constraint firstItem="cMq-SJ-lcD" firstAttribute="top" secondItem="UeF-aZ-4CW" secondAttribute="bottom" id="6F8-e5-Bjo"/>
+                            <constraint firstItem="UeF-aZ-4CW" firstAttribute="top" secondItem="Xsn-eX-EcC" secondAttribute="top" id="DoT-4W-6io"/>
+                            <constraint firstItem="OuS-yR-1Hm" firstAttribute="trailing" secondItem="Xsn-eX-EcC" secondAttribute="trailing" id="EUr-jQ-maD"/>
+                            <constraint firstItem="OuS-yR-1Hm" firstAttribute="leading" secondItem="Xsn-eX-EcC" secondAttribute="leading" id="Mqo-m6-rlL"/>
+                            <constraint firstItem="cMq-SJ-lcD" firstAttribute="trailing" secondItem="Xsn-eX-EcC" secondAttribute="trailing" id="Q8H-3o-6ia"/>
+                            <constraint firstItem="UeF-aZ-4CW" firstAttribute="leading" secondItem="Xsn-eX-EcC" secondAttribute="leading" id="lAJ-4x-1se"/>
+                            <constraint firstItem="cMq-SJ-lcD" firstAttribute="leading" secondItem="Xsn-eX-EcC" secondAttribute="leading" id="n3G-4S-iXC"/>
+                            <constraint firstItem="UeF-aZ-4CW" firstAttribute="trailing" secondItem="Xsn-eX-EcC" secondAttribute="trailing" id="sRW-7v-ZOo"/>
+                            <constraint firstItem="OuS-yR-1Hm" firstAttribute="top" secondItem="cMq-SJ-lcD" secondAttribute="bottom" id="snp-Tj-9ko"/>
+                            <constraint firstItem="OuS-yR-1Hm" firstAttribute="bottom" secondItem="Xsn-eX-EcC" secondAttribute="bottom" id="vux-ia-hJu"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Characters" image="spider_man" id="Y44-s8-zW7"/>
@@ -106,6 +128,9 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBrownColor">
             <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -114,6 +139,9 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
