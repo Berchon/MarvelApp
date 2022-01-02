@@ -9,6 +9,7 @@ import UIKit
 
 class SearchView: UIView {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var contentView: UIView!
     
     override init(frame: CGRect) {
@@ -26,6 +27,7 @@ class SearchView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        searchBar.backgroundImage = UIImage()
     }
 
 }
