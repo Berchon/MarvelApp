@@ -24,7 +24,7 @@
                         <viewLayoutGuide key="safeArea" id="Xsn-eX-EcC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" image="person.2" catalog="system" id="Y44-s8-zW7"/>
+                    <tabBarItem key="tabBarItem" title="Characters" image="spider_man" id="Y44-s8-zW7"/>
                 </viewController>
                 <viewController id="2f3-yY-5DG">
                     <view key="view" contentMode="scaleToFill" id="ZyH-Bs-zmB">
@@ -42,15 +42,15 @@
                         <viewLayoutGuide key="safeArea" id="FI7-OS-Yln"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" image="star" catalog="system" id="sZb-hg-x1E"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" id="sZb-hg-x1E"/>
                 </viewController>
             </viewControllers>
             <point key="canvasLocation" x="901" y="110"/>
         </tabBarController>
     </objects>
     <resources>
-        <image name="person.2" catalog="system" width="128" height="81"/>
-        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="spider_man" width="22.5" height="30"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
