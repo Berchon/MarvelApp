@@ -21,8 +21,60 @@
                     <view key="view" contentMode="scaleToFill" id="abB-p4-vLs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OuS-yR-1Hm">
+                                <rect key="frame" x="0.0" y="132" width="414" height="681"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UeF-aZ-4CW">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Characters" id="9eG-SZ-TGQ"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMq-SJ-lcD">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g02-Q5-JLs">
+                                        <rect key="frame" x="0.0" y="0.0" width="362" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HrY-r6-DLj">
+                                        <rect key="frame" x="362" y="0.0" width="44" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="6Kh-3j-EP7"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6zT-7p-Dj8"/>
+                                    <constraint firstItem="HrY-r6-DLj" firstAttribute="leading" secondItem="g02-Q5-JLs" secondAttribute="trailing" id="7sU-bI-wIe"/>
+                                    <constraint firstAttribute="bottom" secondItem="HrY-r6-DLj" secondAttribute="bottom" id="SrM-y5-Vbk"/>
+                                    <constraint firstItem="HrY-r6-DLj" firstAttribute="leading" secondItem="g02-Q5-JLs" secondAttribute="trailing" id="rZs-ow-Fju"/>
+                                    <constraint firstAttribute="trailing" secondItem="HrY-r6-DLj" secondAttribute="trailing" constant="8" id="ra4-Yh-8j0"/>
+                                    <constraint firstItem="g02-Q5-JLs" firstAttribute="top" secondItem="cMq-SJ-lcD" secondAttribute="top" id="rzA-6F-cO0"/>
+                                    <constraint firstItem="g02-Q5-JLs" firstAttribute="leading" secondItem="cMq-SJ-lcD" secondAttribute="leading" id="to6-0t-sTl"/>
+                                    <constraint firstItem="HrY-r6-DLj" firstAttribute="top" secondItem="cMq-SJ-lcD" secondAttribute="top" id="ub4-cd-YxY"/>
+                                    <constraint firstAttribute="bottom" secondItem="g02-Q5-JLs" secondAttribute="bottom" id="vVl-hF-mCe"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Xsn-eX-EcC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UeF-aZ-4CW" firstAttribute="trailing" secondItem="Xsn-eX-EcC" secondAttribute="trailing" id="76z-Bg-Rig"/>
+                            <constraint firstItem="OuS-yR-1Hm" firstAttribute="top" secondItem="cMq-SJ-lcD" secondAttribute="bottom" id="7Mr-gP-qfH"/>
+                            <constraint firstItem="cMq-SJ-lcD" firstAttribute="leading" secondItem="Xsn-eX-EcC" secondAttribute="leading" id="CGa-qq-lLm"/>
+                            <constraint firstItem="OuS-yR-1Hm" firstAttribute="bottom" secondItem="Xsn-eX-EcC" secondAttribute="bottom" id="Nll-he-uJh"/>
+                            <constraint firstItem="cMq-SJ-lcD" firstAttribute="top" secondItem="UeF-aZ-4CW" secondAttribute="bottom" id="Olk-LO-8My"/>
+                            <constraint firstItem="OuS-yR-1Hm" firstAttribute="trailing" secondItem="Xsn-eX-EcC" secondAttribute="trailing" id="ceN-14-aO2"/>
+                            <constraint firstItem="UeF-aZ-4CW" firstAttribute="leading" secondItem="Xsn-eX-EcC" secondAttribute="leading" id="oK0-6d-iyL"/>
+                            <constraint firstItem="cMq-SJ-lcD" firstAttribute="trailing" secondItem="Xsn-eX-EcC" secondAttribute="trailing" id="p3t-r1-cdZ"/>
+                            <constraint firstItem="UeF-aZ-4CW" firstAttribute="top" secondItem="Xsn-eX-EcC" secondAttribute="top" id="tId-lt-Rlf"/>
+                            <constraint firstItem="OuS-yR-1Hm" firstAttribute="leading" secondItem="Xsn-eX-EcC" secondAttribute="leading" id="zga-1S-Un9"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Characters" image="spider_man" id="Y44-s8-zW7"/>
                 </viewController>
@@ -45,7 +97,7 @@
                     <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" id="sZb-hg-x1E"/>
                 </viewController>
             </viewControllers>
-            <point key="canvasLocation" x="901" y="110"/>
+            <point key="canvasLocation" x="900.00000000000011" y="109.82142857142857"/>
         </tabBarController>
     </objects>
     <resources>
@@ -53,6 +105,18 @@
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
