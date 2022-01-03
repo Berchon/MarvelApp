@@ -78,8 +78,8 @@
                                     <constraint firstItem="HrY-r6-DLj" firstAttribute="top" secondItem="cMq-SJ-lcD" secondAttribute="top" id="s6W-4f-Nez"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OuS-yR-1Hm">
-                                <rect key="frame" x="0.0" y="132" width="414" height="681"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OuS-yR-1Hm" customClass="CollectionView" customModule="Marvel_App" customModuleProvider="target">
+                                <rect key="frame" x="8" y="132" width="398" height="681"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                             </view>
                         </subviews>
@@ -88,8 +88,8 @@
                         <constraints>
                             <constraint firstItem="cMq-SJ-lcD" firstAttribute="top" secondItem="UeF-aZ-4CW" secondAttribute="bottom" id="6F8-e5-Bjo"/>
                             <constraint firstItem="UeF-aZ-4CW" firstAttribute="top" secondItem="Xsn-eX-EcC" secondAttribute="top" id="DoT-4W-6io"/>
-                            <constraint firstItem="OuS-yR-1Hm" firstAttribute="trailing" secondItem="Xsn-eX-EcC" secondAttribute="trailing" id="EUr-jQ-maD"/>
-                            <constraint firstItem="OuS-yR-1Hm" firstAttribute="leading" secondItem="Xsn-eX-EcC" secondAttribute="leading" id="Mqo-m6-rlL"/>
+                            <constraint firstItem="OuS-yR-1Hm" firstAttribute="trailing" secondItem="Xsn-eX-EcC" secondAttribute="trailing" constant="-8" id="EUr-jQ-maD"/>
+                            <constraint firstItem="OuS-yR-1Hm" firstAttribute="leading" secondItem="Xsn-eX-EcC" secondAttribute="leading" constant="8" id="Mqo-m6-rlL"/>
                             <constraint firstItem="cMq-SJ-lcD" firstAttribute="trailing" secondItem="Xsn-eX-EcC" secondAttribute="trailing" id="Q8H-3o-6ia"/>
                             <constraint firstItem="UeF-aZ-4CW" firstAttribute="leading" secondItem="Xsn-eX-EcC" secondAttribute="leading" id="lAJ-4x-1se"/>
                             <constraint firstItem="cMq-SJ-lcD" firstAttribute="leading" secondItem="Xsn-eX-EcC" secondAttribute="leading" id="n3G-4S-iXC"/>
