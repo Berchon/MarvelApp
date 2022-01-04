@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 class ChangeViewButton: UIView {
 
     

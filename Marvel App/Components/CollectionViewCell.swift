@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 class CollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var label: UILabel!
@@ -15,7 +16,7 @@ class CollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+//        self.layer.borderColor = UIColor.lightGray.cgColor
     }
 
 }

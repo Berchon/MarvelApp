@@ -25,8 +25,10 @@
 		EEA874FC277A534E0030A9AD /* Marvel_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA874FB277A534E0030A9AD /* Marvel_AppUITestsLaunchTests.swift */; };
 		EEA8750A277A64B90030A9AD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA87508277A64B90030A9AD /* MainViewController.swift */; };
 		EEA8750B277A64B90030A9AD /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA87509277A64B90030A9AD /* MainViewController.xib */; };
-		EEE7587D2782643A00BA44FE /* CollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE7587C2782643A00BA44FE /* CollectionView.xib */; };
-		EEE7587F2782647F00BA44FE /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7587E2782647F00BA44FE /* CollectionView.swift */; };
+		EED3A888278407BF0019EC18 /* FavoritesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED3A887278407BF0019EC18 /* FavoritesCollectionView.swift */; };
+		EED3A88A27840BC90019EC18 /* FavoritesCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED3A88927840BC90019EC18 /* FavoritesCollectionView.xib */; };
+		EEE7587D2782643A00BA44FE /* CharactersCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE7587C2782643A00BA44FE /* CharactersCollectionView.xib */; };
+		EEE7587F2782647F00BA44FE /* CharactersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7587E2782647F00BA44FE /* CharactersCollectionView.swift */; };
 		EEE7588427827FD400BA44FE /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7588227827FD400BA44FE /* CollectionViewCell.swift */; };
 		EEE7588527827FD400BA44FE /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE7588327827FD400BA44FE /* CollectionViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -71,8 +73,10 @@
 		EEA874FB277A534E0030A9AD /* Marvel_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marvel_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EEA87508277A64B90030A9AD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EEA87509277A64B90030A9AD /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		EEE7587C2782643A00BA44FE /* CollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionView.xib; sourceTree = "<group>"; };
-		EEE7587E2782647F00BA44FE /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		EED3A887278407BF0019EC18 /* FavoritesCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionView.swift; sourceTree = "<group>"; };
+		EED3A88927840BC90019EC18 /* FavoritesCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoritesCollectionView.xib; sourceTree = "<group>"; };
+		EEE7587C2782643A00BA44FE /* CharactersCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersCollectionView.xib; sourceTree = "<group>"; };
+		EEE7587E2782647F00BA44FE /* CharactersCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCollectionView.swift; sourceTree = "<group>"; };
 		EEE7588227827FD400BA44FE /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		EEE7588327827FD400BA44FE /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,8 +117,10 @@
 				EE6A200A2781691D002B5E1A /* ChangeViewButton.swift */,
 				EE6A200627816826002B5E1A /* SortButton.xib */,
 				EE6A200827816905002B5E1A /* SortButton.swift */,
-				EEE7587C2782643A00BA44FE /* CollectionView.xib */,
-				EEE7587E2782647F00BA44FE /* CollectionView.swift */,
+				EEE7587C2782643A00BA44FE /* CharactersCollectionView.xib */,
+				EEE7587E2782647F00BA44FE /* CharactersCollectionView.swift */,
+				EED3A88927840BC90019EC18 /* FavoritesCollectionView.xib */,
+				EED3A887278407BF0019EC18 /* FavoritesCollectionView.swift */,
 				EEE7588327827FD400BA44FE /* CollectionViewCell.xib */,
 				EEE7588227827FD400BA44FE /* CollectionViewCell.swift */,
 			);
@@ -278,9 +284,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EED3A88A27840BC90019EC18 /* FavoritesCollectionView.xib in Resources */,
 				EE6A1FFC27813F80002B5E1A /* SearchView.xib in Resources */,
 				EEA874E5277A534E0030A9AD /* LaunchScreen.storyboard in Resources */,
-				EEE7587D2782643A00BA44FE /* CollectionView.xib in Resources */,
+				EEE7587D2782643A00BA44FE /* CharactersCollectionView.xib in Resources */,
 				EEA8750B277A64B90030A9AD /* MainViewController.xib in Resources */,
 				EE6A2001278142FB002B5E1A /* UpdateListButton.xib in Resources */,
 				EE6A200727816826002B5E1A /* SortButton.xib in Resources */,
@@ -312,12 +319,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEE7588427827FD400BA44FE /* CollectionViewCell.swift in Sources */,
-				EEE7587F2782647F00BA44FE /* CollectionView.swift in Sources */,
+				EEE7587F2782647F00BA44FE /* CharactersCollectionView.swift in Sources */,
 				EE6A200927816905002B5E1A /* SortButton.swift in Sources */,
 				EE6A1FFE27813FAD002B5E1A /* SearchView.swift in Sources */,
 				EEA874D6277A534D0030A9AD /* AppDelegate.swift in Sources */,
 				EE6A2003278162BB002B5E1A /* UpdateListButton.swift in Sources */,
 				EEA874E0277A534D0030A9AD /* Marvel_App.xcdatamodeld in Sources */,
+				EED3A888278407BF0019EC18 /* FavoritesCollectionView.swift in Sources */,
 				EEA874D8277A534D0030A9AD /* SceneDelegate.swift in Sources */,
 				EE6A200B2781691D002B5E1A /* ChangeViewButton.swift in Sources */,
 				EEA8750A277A64B90030A9AD /* MainViewController.swift in Sources */,

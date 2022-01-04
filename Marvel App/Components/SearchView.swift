@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 class SearchView: UIView {
 
     @IBOutlet weak var searchBar: UISearchBar!
@@ -28,6 +29,11 @@ class SearchView: UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         searchBar.backgroundImage = UIImage()
+        
+        searchBar.searchTextField.textColor = .lightGray
+        searchBar.searchTextField.backgroundColor = UIColor(red: 48/255, green: 48/255, blue: 48/255, alpha: 1)
+        searchBar.searchTextField.leftView?.tintColor = .lightGray
+        searchBar.tintColor = .white
     }
 
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 class UpdateListButton: UIView {
 
     @IBOutlet var contentView: UIView!

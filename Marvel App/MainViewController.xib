@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,7 +13,9 @@
             <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Gn-w2-hZg">
                 <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="selectedImageTintColor" red="0.96802896260000004" green="0.81163072589999996" blue="0.27427986259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             </tabBar>
             <viewControllers>
                 <viewController id="UIo-jh-08J">
@@ -22,8 +23,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UeF-aZ-4CW">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UeF-aZ-4CW">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.88628292080000004" green="0.88626366850000005" blue="0.88626760240000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Characters" id="9eG-SZ-TGQ"/>
                                 </items>
@@ -33,31 +38,26 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g02-Q5-JLs" customClass="SearchView" customModule="Marvel_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="274" height="44"/>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIU-eg-Kld" userLabel="botao1" customClass="UpdateListButton" customModule="Marvel_App" customModuleProvider="target">
                                         <rect key="frame" x="274" y="0.0" width="44" height="44"/>
-                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="nw5-Er-cxg"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lai-lu-aCE" userLabel="botao2" customClass="ChangeViewButton" customModule="Marvel_App" customModuleProvider="target">
                                         <rect key="frame" x="318" y="0.0" width="44" height="44"/>
-                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="A40-n7-LfW"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HrY-r6-DLj" userLabel="botao3" customClass="SortButton" customModule="Marvel_App" customModuleProvider="target">
                                         <rect key="frame" x="362" y="0.0" width="44" height="44"/>
-                                        <color key="backgroundColor" systemColor="systemBrownColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="6Kh-3j-EP7"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="0aI-Eo-9SC"/>
                                     <constraint firstAttribute="bottom" secondItem="HrY-r6-DLj" secondAttribute="bottom" id="4D5-ja-BeP"/>
@@ -78,13 +78,12 @@
                                     <constraint firstItem="HrY-r6-DLj" firstAttribute="top" secondItem="cMq-SJ-lcD" secondAttribute="top" id="s6W-4f-Nez"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OuS-yR-1Hm" customClass="CollectionView" customModule="Marvel_App" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OuS-yR-1Hm" customClass="CharactersCollectionView" customModule="Marvel_App" customModuleProvider="target">
                                 <rect key="frame" x="8" y="132" width="398" height="681"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Xsn-eX-EcC"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cMq-SJ-lcD" firstAttribute="top" secondItem="UeF-aZ-4CW" secondAttribute="bottom" id="6F8-e5-Bjo"/>
                             <constraint firstItem="UeF-aZ-4CW" firstAttribute="top" secondItem="Xsn-eX-EcC" secondAttribute="top" id="DoT-4W-6io"/>
@@ -105,16 +104,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOG-qI-an5">
-                                <rect key="frame" x="151" y="276" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cT2-N7-nnd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="xrm-ba-f2p"/>
+                                </constraints>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.88628292080000004" green="0.88626366850000005" blue="0.88626760240000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Favorites" id="yhN-DX-3a5"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRN-Rc-3cv" customClass="FavoritesCollectionView" customModule="Marvel_App" customModuleProvider="target">
+                                <rect key="frame" x="8" y="88" width="398" height="725"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FI7-OS-Yln"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fRN-Rc-3cv" firstAttribute="top" secondItem="cT2-N7-nnd" secondAttribute="bottom" id="Idg-1r-4Rz"/>
+                            <constraint firstItem="cT2-N7-nnd" firstAttribute="top" secondItem="FI7-OS-Yln" secondAttribute="top" id="cPk-J0-oc8"/>
+                            <constraint firstItem="cT2-N7-nnd" firstAttribute="trailing" secondItem="FI7-OS-Yln" secondAttribute="trailing" id="eGg-Fc-SyV"/>
+                            <constraint firstItem="FI7-OS-Yln" firstAttribute="bottom" secondItem="fRN-Rc-3cv" secondAttribute="bottom" id="h9D-X6-nf1"/>
+                            <constraint firstItem="FI7-OS-Yln" firstAttribute="trailing" secondItem="fRN-Rc-3cv" secondAttribute="trailing" constant="8" id="tb4-gW-cJH"/>
+                            <constraint firstItem="cT2-N7-nnd" firstAttribute="leading" secondItem="FI7-OS-Yln" secondAttribute="leading" id="xjv-ch-0Y8"/>
+                            <constraint firstItem="fRN-Rc-3cv" firstAttribute="leading" secondItem="FI7-OS-Yln" secondAttribute="leading" constant="8" id="yLX-S5-niv"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" id="sZb-hg-x1E"/>
                 </viewController>
@@ -125,26 +142,5 @@
     <resources>
         <image name="spider_man" width="22.5" height="30"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

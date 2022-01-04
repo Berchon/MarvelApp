@@ -7,7 +7,8 @@
 
 import UIKit
 
-class CollectionView: UIView {
+@IBDesignable
+class FavoritesCollectionView: UIView {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -27,29 +28,25 @@ class CollectionView: UIView {
         
     private func commonInit() {
         let bundle = Bundle(for: type(of: self))
-        bundle.loadNibNamed("CollectionView", owner: self, options: nil)
+        bundle.loadNibNamed("FavoritesCollectionView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        contentView.backgroundColor = .green
-
+        
+//        contentView.backgroundColor = .systemPink
+        collectionView.backgroundColor = .clear
         initCollectionView()
-        numberOfColumns()
+//        numberOfColumns()
     }
     
-    func numberOfColumns(numberOfCol: Int = 3) {
+    func numberOfColumns(numberOfCol: Int = 2) {
 
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        
-        collectionView.layer.borderWidth = 1
-        collectionView.layer.borderColor = .init(red: 255, green: 0, blue: 0, alpha: 1)
         
         let spaceBetweenCells = Int(layout.minimumInteritemSpacing)
         let totalSpaceBetweenColumns = (numberOfCol - 1) * spaceBetweenCells
         let width = (Int(contentView.frame.size.width) - totalSpaceBetweenColumns) / numberOfCol
-        let a = contentView.frame.size.width
-        let b = collectionView.frame.width
-        layout.itemSize = CGSize(width: width, height: Int(Double(width) * 1.5))
+        layout.itemSize = CGSize(width: width, height: Int(Double(width) * 4 / 3))
         
     }
     
@@ -60,9 +57,9 @@ class CollectionView: UIView {
     }
 }
 
-extension CollectionView: UICollectionViewDataSource, UICollectionViewDelegate {
+extension FavoritesCollectionView: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -71,35 +68,11 @@ extension CollectionView: UICollectionViewDataSource, UICollectionViewDelegate {
         }
         
         cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 12
-        cell.layer.borderColor = UIColor.gray.cgColor
+        cell.layer.cornerRadius = 10
         
-        // Gradient initialization
-        let gradient = CAGradientLayer()
+        numberOfColumns()
         
-        let centerColor = UIColor(red: 236/255, green: 18/255, blue: 34/255, alpha: 1).cgColor
-        let edgeColor = UIColor(red: 102/255, green: 7/255, blue: 14/255, alpha: 1).cgColor
-        
-        // Gradient configuration
-        gradient.colors = [centerColor, edgeColor]
-        gradient.locations = [0.0, 1.0]
-        gradient.type = .radial
-        gradient.startPoint = CGPoint(x: 0.5, y: 0.5)
-        gradient.endPoint = CGPoint(x: 1.5, y: 1.5)
-        
-        gradient.frame = cell.bounds
-//        gradient.frame = self.containerView.bounds
-        gradient.cornerRadius = cell.layer.cornerRadius
-
-        // Add gradient in containerView
-        cell.layer.insertSublayer(gradient, at: 0)
-        
-//        cell.layer.shadowOffset = CGSize(width: 3, height: 3)
-//        cell.layer.shadowRadius = 4
-//        cell.label.shadowColor = .lightGray
-//        cell.layer.shadowOpacity = 6
-        
-        cell.label.text = "\(indexPath.item)"
+        cell.label.text = "Favorites \(indexPath.item)"
         return cell
     }
 }
