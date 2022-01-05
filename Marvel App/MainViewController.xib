@@ -39,7 +39,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g02-Q5-JLs" customClass="SearchView" customModule="Marvel_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="274" height="44"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIU-eg-Kld" userLabel="botao1" customClass="UpdateListButton" customModule="Marvel_App" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIU-eg-Kld" userLabel="botao1" customClass="SortButton" customModule="Marvel_App" customModuleProvider="target">
                                         <rect key="frame" x="274" y="0.0" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="nw5-Er-cxg"/>
@@ -51,7 +51,7 @@
                                             <constraint firstAttribute="width" constant="44" id="A40-n7-LfW"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HrY-r6-DLj" userLabel="botao3" customClass="SortButton" customModule="Marvel_App" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HrY-r6-DLj" userLabel="botao3" customClass="UpdateListButton" customModule="Marvel_App" customModuleProvider="target">
                                         <rect key="frame" x="362" y="0.0" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="6Kh-3j-EP7"/>
