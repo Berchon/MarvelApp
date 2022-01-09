@@ -18,5 +18,6 @@ class CollectionViewCell: UICollectionViewCell {
         // Initialization code
 //        self.layer.borderColor = UIColor.lightGray.cgColor
     }
+    
 
 }

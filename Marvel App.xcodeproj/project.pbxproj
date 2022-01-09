@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE20AEFA2786781D00CB122F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20AEF82786781D00CB122F /* DetailsViewController.swift */; };
+		EE20AEFB2786781D00CB122F /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE20AEF92786781D00CB122F /* DetailsViewController.xib */; };
 		EE6A1FFC27813F80002B5E1A /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6A1FFB27813F80002B5E1A /* SearchView.xib */; };
 		EE6A1FFE27813FAD002B5E1A /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6A1FFD27813FAD002B5E1A /* SearchView.swift */; };
 		EE6A2001278142FB002B5E1A /* UpdateListButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6A2000278142FB002B5E1A /* UpdateListButton.xib */; };
@@ -15,6 +17,8 @@
 		EE6A200727816826002B5E1A /* SortButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6A200627816826002B5E1A /* SortButton.xib */; };
 		EE6A200927816905002B5E1A /* SortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6A200827816905002B5E1A /* SortButton.swift */; };
 		EE6A200B2781691D002B5E1A /* ChangeViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6A200A2781691D002B5E1A /* ChangeViewButton.swift */; };
+		EE7321D62788ECA100E3C330 /* testeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7321D42788ECA100E3C330 /* testeViewController.swift */; };
+		EE7321D72788ECA100E3C330 /* testeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE7321D52788ECA100E3C330 /* testeViewController.xib */; };
 		EEA38C70278511BB00D26A83 /* EmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA38C6E278511BB00D26A83 /* EmptyCollectionViewCell.swift */; };
 		EEA38C71278511BB00D26A83 /* EmptyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA38C6F278511BB00D26A83 /* EmptyCollectionViewCell.xib */; };
 		EEA874D6277A534D0030A9AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA874D5277A534D0030A9AD /* AppDelegate.swift */; };
@@ -53,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE20AEF82786781D00CB122F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		EE20AEF92786781D00CB122F /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 		EE6A1FFB27813F80002B5E1A /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		EE6A1FFD27813FAD002B5E1A /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		EE6A2000278142FB002B5E1A /* UpdateListButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateListButton.xib; sourceTree = "<group>"; };
@@ -61,6 +67,8 @@
 		EE6A200627816826002B5E1A /* SortButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SortButton.xib; sourceTree = "<group>"; };
 		EE6A200827816905002B5E1A /* SortButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortButton.swift; sourceTree = "<group>"; };
 		EE6A200A2781691D002B5E1A /* ChangeViewButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeViewButton.swift; sourceTree = "<group>"; };
+		EE7321D42788ECA100E3C330 /* testeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testeViewController.swift; sourceTree = "<group>"; };
+		EE7321D52788ECA100E3C330 /* testeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = testeViewController.xib; sourceTree = "<group>"; };
 		EEA38C6E278511BB00D26A83 /* EmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionViewCell.swift; sourceTree = "<group>"; };
 		EEA38C6F278511BB00D26A83 /* EmptyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCollectionViewCell.xib; sourceTree = "<group>"; };
 		EEA874D2277A534D0030A9AD /* Marvel App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Marvel App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +141,20 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		EE9A02932787B74E0080B22C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE6A1FFF2781424D002B5E1A /* Components */,
+				EE20AEF82786781D00CB122F /* DetailsViewController.swift */,
+				EE20AEF92786781D00CB122F /* DetailsViewController.xib */,
+				EE7321D42788ECA100E3C330 /* testeViewController.swift */,
+				EE7321D52788ECA100E3C330 /* testeViewController.xib */,
+				EEA87508277A64B90030A9AD /* MainViewController.swift */,
+				EEA87509277A64B90030A9AD /* MainViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EEA874C9277A534D0030A9AD = {
 			isa = PBXGroup;
 			children = (
@@ -156,15 +178,13 @@
 		EEA874D4277A534D0030A9AD /* Marvel App */ = {
 			isa = PBXGroup;
 			children = (
-				EE6A1FFF2781424D002B5E1A /* Components */,
+				EE9A02932787B74E0080B22C /* View */,
 				EEA874D5277A534D0030A9AD /* AppDelegate.swift */,
 				EEA874D7277A534D0030A9AD /* SceneDelegate.swift */,
 				EEA874E1277A534E0030A9AD /* Assets.xcassets */,
 				EEA874E3277A534E0030A9AD /* LaunchScreen.storyboard */,
 				EEA874E6277A534E0030A9AD /* Info.plist */,
 				EEA874DE277A534D0030A9AD /* Marvel_App.xcdatamodeld */,
-				EEA87508277A64B90030A9AD /* MainViewController.swift */,
-				EEA87509277A64B90030A9AD /* MainViewController.xib */,
 			);
 			path = "Marvel App";
 			sourceTree = "<group>";
@@ -298,9 +318,11 @@
 				EEA8750B277A64B90030A9AD /* MainViewController.xib in Resources */,
 				EE6A2001278142FB002B5E1A /* UpdateListButton.xib in Resources */,
 				EE6A200727816826002B5E1A /* SortButton.xib in Resources */,
+				EE7321D72788ECA100E3C330 /* testeViewController.xib in Resources */,
 				EE6A20052781680E002B5E1A /* ChangeViewButton.xib in Resources */,
 				EEA874E2277A534E0030A9AD /* Assets.xcassets in Resources */,
 				EEE7588527827FD400BA44FE /* CollectionViewCell.xib in Resources */,
+				EE20AEFB2786781D00CB122F /* DetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +349,7 @@
 			files = (
 				EEE7588427827FD400BA44FE /* CollectionViewCell.swift in Sources */,
 				EEE7587F2782647F00BA44FE /* CharactersCollectionView.swift in Sources */,
+				EE7321D62788ECA100E3C330 /* testeViewController.swift in Sources */,
 				EE6A200927816905002B5E1A /* SortButton.swift in Sources */,
 				EE6A1FFE27813FAD002B5E1A /* SearchView.swift in Sources */,
 				EEA874D6277A534D0030A9AD /* AppDelegate.swift in Sources */,
@@ -336,6 +359,7 @@
 				EEA874D8277A534D0030A9AD /* SceneDelegate.swift in Sources */,
 				EE6A200B2781691D002B5E1A /* ChangeViewButton.swift in Sources */,
 				EEA38C70278511BB00D26A83 /* EmptyCollectionViewCell.swift in Sources */,
+				EE20AEFA2786781D00CB122F /* DetailsViewController.swift in Sources */,
 				EEA8750A277A64B90030A9AD /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

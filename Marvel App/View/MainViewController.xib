@@ -9,16 +9,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="Marvel_App" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tabBarController id="5eV-VP-VIb">
+        <tabBarController id="5eV-VP-VIb" customClass="MainViewController" customModule="Marvel_App" customModuleProvider="target">
             <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Gn-w2-hZg">
                 <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                <color key="selectedImageTintColor" red="0.96802896260000004" green="0.81163072589999996" blue="0.27427986259999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <color key="selectedImageTintColor" red="0.96862745098039216" green="0.81176470588235294" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             </tabBar>
             <viewControllers>
-                <viewController id="UIo-jh-08J">
+                <viewController title="Characters" nibName="Characters" id="UIo-jh-08J" customClass="CharactersViewController" customModule="Marvel_App" customModuleProvider="target">
                     <view key="view" contentMode="scaleToFill" id="abB-p4-vLs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="0.88628292080000004" green="0.88626366850000005" blue="0.88626760240000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="textColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Characters" id="9eG-SZ-TGQ"/>
@@ -81,6 +81,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OuS-yR-1Hm" customClass="CharactersCollectionView" customModule="Marvel_App" customModuleProvider="target">
                                 <rect key="frame" x="8" y="132" width="398" height="681"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izV-bb-PeH">
+                                <rect key="frame" x="173" y="432" width="67" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="botao:" destination="-1" eventType="touchUpInside" id="UiD-MN-wmR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Xsn-eX-EcC"/>
                         <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -105,7 +114,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cT2-N7-nnd">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="xrm-ba-f2p"/>
                                 </constraints>
@@ -118,7 +127,7 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRN-Rc-3cv" customClass="FavoritesCollectionView" customModule="Marvel_App" customModuleProvider="target">
-                                <rect key="frame" x="8" y="88" width="398" height="725"/>
+                                <rect key="frame" x="8" y="44" width="398" height="852"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FI7-OS-Yln"/>

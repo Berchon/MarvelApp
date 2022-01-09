@@ -7,13 +7,30 @@
 
 import UIKit
 
+protocol CharactersCollectionDelegate: AnyObject {
+    func pushDetails()
+}
+
+//class CharactersViewController: UIViewController {
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//    }
+//}
+
 @IBDesignable
 class CharactersCollectionView: UIView {
 
+    weak var delegate: CharactersCollectionDelegate?
+    
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var collectionData: [String] = []
+    
+    //let navigationController = UINavigationController(nibName: "MainViewController", bundle: nil)
+    
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,6 +65,7 @@ class CharactersCollectionView: UIView {
         let nib = UINib(nibName: nibName, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "CustomCell")
         collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
     func numberOfColumns(numberOfCol: Int = 2) {
@@ -59,9 +77,11 @@ class CharactersCollectionView: UIView {
         let width = (Int(contentView.frame.size.width) - totalSpaceBetweenColumns) / numberOfCol
         layout.itemSize = CGSize(width: width, height: Int(Double(width) * 4 / 3))
     }
+    
 }
 
 extension CharactersCollectionView: UICollectionViewDataSource, UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionData.count == 0 {
             return 1
@@ -108,25 +128,28 @@ extension CharactersCollectionView: UICollectionViewDataSource, UICollectionView
         cell.label.text = "Character \(indexPath.item)"
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+//        delegate?.pushDetails()
+        print(indexPath.row)
+//        print(self.navigationController)
+//        let vc = DetailsViewController()
+        
+//        let vc = SegundaTelaViewController()
+//        let navigationController = UINavigationController(rootViewController: vc)
+
+//        navigationController.modalPresentationStyle = .fullScreen
+
+//        self.present(navigationController, animated: true, completion: nil)
+        
+        
+//        navigationController.pushViewController(detaisVC, animated: true)
+    }
 }
 
-/*
-// Gradient initialization
-let gradient = CAGradientLayer()
-let centerColor = UIColor(red: 236/255, green: 18/255, blue: 34/255, alpha: 1).cgColor
-let edgeColor = UIColor(red: 102/255, green: 7/255, blue: 14/255, alpha: 1).cgColor
-
-// Gradient configuration
-gradient.colors = [centerColor, edgeColor]
-gradient.locations = [0.0, 1.0]
-gradient.type = .radial
-gradient.startPoint = CGPoint(x: 0.5, y: 0.5)
-gradient.endPoint = CGPoint(x: 1.5, y: 1.5)
-
-gradient.frame = cell.bounds
-gradient.cornerRadius = cell.layer.cornerRadius
-
-// Add gradient in containerView
-cell.layer.insertSublayer(gradient, at: 0)
-
-*/
+//extension UINavigationController {
+//    var rootViewController: UIViewController? {
+//        return viewControllers.first
+//    }
+//}
