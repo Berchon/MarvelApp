@@ -1,41 +1,53 @@
 //
 //  MainViewController.swift
-//  Marvel App
+//  MarvelApp3
 //
-//  Created by Luciano Berchon on 27/12/21.
+//  Created by Luciano Berchon on 07/01/22.
 //
 
 import UIKit
 
 class MainViewController: UITabBarController {
-
+    
     override var nibName: String? {
         "MainViewController"
     }
-
-    class func instantiateFromNib() -> UITabBarController {
-        let nib = UINib(nibName: "MainViewController", bundle: nil)
-        let vc = nib.instantiate(withOwner: nil, options: nil).last as! UITabBarController
-        
-        return vc
-    }
-
-    @IBAction func botao(_ sender: Any) {
-//        present(DetailsViewController(), animated: true, completion: nil)
+    
+    
+    @IBAction func chamaDetalhes(_ sender: Any) {
         navigationController?.pushViewController(DetailsViewController(), animated: true)
     }
     
-}
-
-extension MainViewController: CharactersCollectionDelegate {
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        navigationController?.navigationBar.topItem?.title = item.title
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("================")
-//        self.navigationController?.pushViewController(DetailsViewController(), animated: true)
+        configureNavBar()
+    }
+
+    
+    class func instantiateFromNib() -> UITabBarController {
+        let nib = UINib(nibName: "MainViewController", bundle: nil)
+        let vc = nib.instantiate(withOwner: nil, options: nil).first as! UITabBarController
+        
+        return vc
     }
     
-    func pushDetails() {
-        navigationController?.pushViewController(DetailsViewController(), animated: true)
+    
+    private func configureNavBar() {
+        let firstTab = self.tabBar.items?.first
+        let titleColor = UIColor(red: 226/255, green: 226/255, blue: 226/255, alpha: 1)
+        
+        navigationController?.navigationBar.topItem?.title = firstTab!.title
+        navigationController?.navigationBar.backgroundColor = .black
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: titleColor]
+        
+        navigationController?.navigationBar.barTintColor = .black
+        navigationController?.navigationBar.tintColor = UIColor(red: 247/255, green: 207/255, blue: 70/255, alpha: 1)
     }
+
 }

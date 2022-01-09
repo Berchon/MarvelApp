@@ -7,20 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE20AEFA2786781D00CB122F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE20AEF82786781D00CB122F /* DetailsViewController.swift */; };
-		EE20AEFB2786781D00CB122F /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE20AEF92786781D00CB122F /* DetailsViewController.xib */; };
-		EE6A1FFC27813F80002B5E1A /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6A1FFB27813F80002B5E1A /* SearchView.xib */; };
-		EE6A1FFE27813FAD002B5E1A /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6A1FFD27813FAD002B5E1A /* SearchView.swift */; };
-		EE6A2001278142FB002B5E1A /* UpdateListButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6A2000278142FB002B5E1A /* UpdateListButton.xib */; };
-		EE6A2003278162BB002B5E1A /* UpdateListButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6A2002278162BB002B5E1A /* UpdateListButton.swift */; };
-		EE6A20052781680E002B5E1A /* ChangeViewButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6A20042781680E002B5E1A /* ChangeViewButton.xib */; };
-		EE6A200727816826002B5E1A /* SortButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6A200627816826002B5E1A /* SortButton.xib */; };
-		EE6A200927816905002B5E1A /* SortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6A200827816905002B5E1A /* SortButton.swift */; };
-		EE6A200B2781691D002B5E1A /* ChangeViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6A200A2781691D002B5E1A /* ChangeViewButton.swift */; };
-		EE7321D62788ECA100E3C330 /* testeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7321D42788ECA100E3C330 /* testeViewController.swift */; };
-		EE7321D72788ECA100E3C330 /* testeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE7321D52788ECA100E3C330 /* testeViewController.xib */; };
-		EEA38C70278511BB00D26A83 /* EmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA38C6E278511BB00D26A83 /* EmptyCollectionViewCell.swift */; };
-		EEA38C71278511BB00D26A83 /* EmptyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA38C6F278511BB00D26A83 /* EmptyCollectionViewCell.xib */; };
+		EE972121278B8C5900CFEF47 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE972120278B8C5900CFEF47 /* SearchBar.swift */; };
+		EE972123278B8C6300CFEF47 /* button.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE972122278B8C6300CFEF47 /* button.swift */; };
+		EE972125278B8C6900CFEF47 /* CharactersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE972124278B8C6900CFEF47 /* CharactersCollectionView.swift */; };
+		EE972127278B8C7900CFEF47 /* FavoritesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE972126278B8C7900CFEF47 /* FavoritesCollectionView.swift */; };
+		EE97212C278B8C9E00CFEF47 /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE972128278B8C9E00CFEF47 /* CardCollectionViewCell.xib */; };
+		EE97212D278B8C9E00CFEF47 /* EmptyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE972129278B8C9E00CFEF47 /* EmptyCollectionViewCell.swift */; };
+		EE97212E278B8C9E00CFEF47 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE97212A278B8C9E00CFEF47 /* CardCollectionViewCell.swift */; };
+		EE97212F278B8C9E00CFEF47 /* EmptyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE97212B278B8C9E00CFEF47 /* EmptyCollectionViewCell.xib */; };
+		EE972134278B8CC500CFEF47 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE972130278B8CC500CFEF47 /* DetailsViewController.swift */; };
+		EE972135278B8CC500CFEF47 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE972131278B8CC500CFEF47 /* MainViewController.xib */; };
+		EE972136278B8CC500CFEF47 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE972132278B8CC500CFEF47 /* DetailsViewController.xib */; };
+		EE972137278B8CC500CFEF47 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE972133278B8CC500CFEF47 /* MainViewController.swift */; };
 		EEA874D6277A534D0030A9AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA874D5277A534D0030A9AD /* AppDelegate.swift */; };
 		EEA874D8277A534D0030A9AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA874D7277A534D0030A9AD /* SceneDelegate.swift */; };
 		EEA874E0277A534D0030A9AD /* Marvel_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EEA874DE277A534D0030A9AD /* Marvel_App.xcdatamodeld */; };
@@ -29,14 +27,6 @@
 		EEA874F0277A534E0030A9AD /* Marvel_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA874EF277A534E0030A9AD /* Marvel_AppTests.swift */; };
 		EEA874FA277A534E0030A9AD /* Marvel_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA874F9277A534E0030A9AD /* Marvel_AppUITests.swift */; };
 		EEA874FC277A534E0030A9AD /* Marvel_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA874FB277A534E0030A9AD /* Marvel_AppUITestsLaunchTests.swift */; };
-		EEA8750A277A64B90030A9AD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA87508277A64B90030A9AD /* MainViewController.swift */; };
-		EEA8750B277A64B90030A9AD /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA87509277A64B90030A9AD /* MainViewController.xib */; };
-		EED3A888278407BF0019EC18 /* FavoritesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED3A887278407BF0019EC18 /* FavoritesCollectionView.swift */; };
-		EED3A88A27840BC90019EC18 /* FavoritesCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED3A88927840BC90019EC18 /* FavoritesCollectionView.xib */; };
-		EEE7587D2782643A00BA44FE /* CharactersCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE7587C2782643A00BA44FE /* CharactersCollectionView.xib */; };
-		EEE7587F2782647F00BA44FE /* CharactersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7587E2782647F00BA44FE /* CharactersCollectionView.swift */; };
-		EEE7588427827FD400BA44FE /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE7588227827FD400BA44FE /* CollectionViewCell.swift */; };
-		EEE7588527827FD400BA44FE /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEE7588327827FD400BA44FE /* CollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,20 +47,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EE20AEF82786781D00CB122F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
-		EE20AEF92786781D00CB122F /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
-		EE6A1FFB27813F80002B5E1A /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
-		EE6A1FFD27813FAD002B5E1A /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		EE6A2000278142FB002B5E1A /* UpdateListButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateListButton.xib; sourceTree = "<group>"; };
-		EE6A2002278162BB002B5E1A /* UpdateListButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateListButton.swift; sourceTree = "<group>"; };
-		EE6A20042781680E002B5E1A /* ChangeViewButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeViewButton.xib; sourceTree = "<group>"; };
-		EE6A200627816826002B5E1A /* SortButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SortButton.xib; sourceTree = "<group>"; };
-		EE6A200827816905002B5E1A /* SortButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortButton.swift; sourceTree = "<group>"; };
-		EE6A200A2781691D002B5E1A /* ChangeViewButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeViewButton.swift; sourceTree = "<group>"; };
-		EE7321D42788ECA100E3C330 /* testeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testeViewController.swift; sourceTree = "<group>"; };
-		EE7321D52788ECA100E3C330 /* testeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = testeViewController.xib; sourceTree = "<group>"; };
-		EEA38C6E278511BB00D26A83 /* EmptyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionViewCell.swift; sourceTree = "<group>"; };
-		EEA38C6F278511BB00D26A83 /* EmptyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCollectionViewCell.xib; sourceTree = "<group>"; };
+		EE972120278B8C5900CFEF47 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		EE972122278B8C6300CFEF47 /* button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = button.swift; sourceTree = "<group>"; };
+		EE972124278B8C6900CFEF47 /* CharactersCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersCollectionView.swift; sourceTree = "<group>"; };
+		EE972126278B8C7900CFEF47 /* FavoritesCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionView.swift; sourceTree = "<group>"; };
+		EE972128278B8C9E00CFEF47 /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
+		EE972129278B8C9E00CFEF47 /* EmptyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE97212A278B8C9E00CFEF47 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE97212B278B8C9E00CFEF47 /* EmptyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyCollectionViewCell.xib; sourceTree = "<group>"; };
+		EE972130278B8CC500CFEF47 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		EE972131278B8CC500CFEF47 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		EE972132278B8CC500CFEF47 /* DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		EE972133278B8CC500CFEF47 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EEA874D2277A534D0030A9AD /* Marvel App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Marvel App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEA874D5277A534D0030A9AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEA874D7277A534D0030A9AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,14 +71,6 @@
 		EEA874F5277A534E0030A9AD /* Marvel AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Marvel AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEA874F9277A534E0030A9AD /* Marvel_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marvel_AppUITests.swift; sourceTree = "<group>"; };
 		EEA874FB277A534E0030A9AD /* Marvel_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marvel_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		EEA87508277A64B90030A9AD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		EEA87509277A64B90030A9AD /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		EED3A887278407BF0019EC18 /* FavoritesCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionView.swift; sourceTree = "<group>"; };
-		EED3A88927840BC90019EC18 /* FavoritesCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoritesCollectionView.xib; sourceTree = "<group>"; };
-		EEE7587C2782643A00BA44FE /* CharactersCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersCollectionView.xib; sourceTree = "<group>"; };
-		EEE7587E2782647F00BA44FE /* CharactersCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCollectionView.swift; sourceTree = "<group>"; };
-		EEE7588227827FD400BA44FE /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		EEE7588327827FD400BA44FE /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,36 +101,42 @@
 		EE6A1FFF2781424D002B5E1A /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				EE6A1FFB27813F80002B5E1A /* SearchView.xib */,
-				EE6A1FFD27813FAD002B5E1A /* SearchView.swift */,
-				EE6A2000278142FB002B5E1A /* UpdateListButton.xib */,
-				EE6A2002278162BB002B5E1A /* UpdateListButton.swift */,
-				EE6A20042781680E002B5E1A /* ChangeViewButton.xib */,
-				EE6A200A2781691D002B5E1A /* ChangeViewButton.swift */,
-				EE6A200627816826002B5E1A /* SortButton.xib */,
-				EE6A200827816905002B5E1A /* SortButton.swift */,
-				EEE7587C2782643A00BA44FE /* CharactersCollectionView.xib */,
-				EEE7587E2782647F00BA44FE /* CharactersCollectionView.swift */,
-				EED3A88927840BC90019EC18 /* FavoritesCollectionView.xib */,
-				EED3A887278407BF0019EC18 /* FavoritesCollectionView.swift */,
-				EEE7588327827FD400BA44FE /* CollectionViewCell.xib */,
-				EEE7588227827FD400BA44FE /* CollectionViewCell.swift */,
-				EEA38C6F278511BB00D26A83 /* EmptyCollectionViewCell.xib */,
-				EEA38C6E278511BB00D26A83 /* EmptyCollectionViewCell.swift */,
+				EE97212A278B8C9E00CFEF47 /* CardCollectionViewCell.swift */,
+				EE972128278B8C9E00CFEF47 /* CardCollectionViewCell.xib */,
+				EE972129278B8C9E00CFEF47 /* EmptyCollectionViewCell.swift */,
+				EE97212B278B8C9E00CFEF47 /* EmptyCollectionViewCell.xib */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		EE97211E278B8C1B00CFEF47 /* FavoritesComponents */ = {
+			isa = PBXGroup;
+			children = (
+				EE972126278B8C7900CFEF47 /* FavoritesCollectionView.swift */,
+			);
+			path = FavoritesComponents;
+			sourceTree = "<group>";
+		};
+		EE97211F278B8C3700CFEF47 /* CharactersComponents */ = {
+			isa = PBXGroup;
+			children = (
+				EE972120278B8C5900CFEF47 /* SearchBar.swift */,
+				EE972122278B8C6300CFEF47 /* button.swift */,
+				EE972124278B8C6900CFEF47 /* CharactersCollectionView.swift */,
+			);
+			path = CharactersComponents;
 			sourceTree = "<group>";
 		};
 		EE9A02932787B74E0080B22C /* View */ = {
 			isa = PBXGroup;
 			children = (
 				EE6A1FFF2781424D002B5E1A /* Components */,
-				EE20AEF82786781D00CB122F /* DetailsViewController.swift */,
-				EE20AEF92786781D00CB122F /* DetailsViewController.xib */,
-				EE7321D42788ECA100E3C330 /* testeViewController.swift */,
-				EE7321D52788ECA100E3C330 /* testeViewController.xib */,
-				EEA87508277A64B90030A9AD /* MainViewController.swift */,
-				EEA87509277A64B90030A9AD /* MainViewController.xib */,
+				EE97211F278B8C3700CFEF47 /* CharactersComponents */,
+				EE97211E278B8C1B00CFEF47 /* FavoritesComponents */,
+				EE972130278B8CC500CFEF47 /* DetailsViewController.swift */,
+				EE972132278B8CC500CFEF47 /* DetailsViewController.xib */,
+				EE972133278B8CC500CFEF47 /* MainViewController.swift */,
+				EE972131278B8CC500CFEF47 /* MainViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,19 +296,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EED3A88A27840BC90019EC18 /* FavoritesCollectionView.xib in Resources */,
-				EE6A1FFC27813F80002B5E1A /* SearchView.xib in Resources */,
-				EEA38C71278511BB00D26A83 /* EmptyCollectionViewCell.xib in Resources */,
+				EE97212F278B8C9E00CFEF47 /* EmptyCollectionViewCell.xib in Resources */,
 				EEA874E5277A534E0030A9AD /* LaunchScreen.storyboard in Resources */,
-				EEE7587D2782643A00BA44FE /* CharactersCollectionView.xib in Resources */,
-				EEA8750B277A64B90030A9AD /* MainViewController.xib in Resources */,
-				EE6A2001278142FB002B5E1A /* UpdateListButton.xib in Resources */,
-				EE6A200727816826002B5E1A /* SortButton.xib in Resources */,
-				EE7321D72788ECA100E3C330 /* testeViewController.xib in Resources */,
-				EE6A20052781680E002B5E1A /* ChangeViewButton.xib in Resources */,
+				EE972135278B8CC500CFEF47 /* MainViewController.xib in Resources */,
+				EE97212C278B8C9E00CFEF47 /* CardCollectionViewCell.xib in Resources */,
 				EEA874E2277A534E0030A9AD /* Assets.xcassets in Resources */,
-				EEE7588527827FD400BA44FE /* CollectionViewCell.xib in Resources */,
-				EE20AEFB2786781D00CB122F /* DetailsViewController.xib in Resources */,
+				EE972136278B8CC500CFEF47 /* DetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,20 +326,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEE7588427827FD400BA44FE /* CollectionViewCell.swift in Sources */,
-				EEE7587F2782647F00BA44FE /* CharactersCollectionView.swift in Sources */,
-				EE7321D62788ECA100E3C330 /* testeViewController.swift in Sources */,
-				EE6A200927816905002B5E1A /* SortButton.swift in Sources */,
-				EE6A1FFE27813FAD002B5E1A /* SearchView.swift in Sources */,
+				EE972125278B8C6900CFEF47 /* CharactersCollectionView.swift in Sources */,
+				EE972137278B8CC500CFEF47 /* MainViewController.swift in Sources */,
 				EEA874D6277A534D0030A9AD /* AppDelegate.swift in Sources */,
-				EE6A2003278162BB002B5E1A /* UpdateListButton.swift in Sources */,
 				EEA874E0277A534D0030A9AD /* Marvel_App.xcdatamodeld in Sources */,
-				EED3A888278407BF0019EC18 /* FavoritesCollectionView.swift in Sources */,
+				EE97212E278B8C9E00CFEF47 /* CardCollectionViewCell.swift in Sources */,
+				EE972121278B8C5900CFEF47 /* SearchBar.swift in Sources */,
 				EEA874D8277A534D0030A9AD /* SceneDelegate.swift in Sources */,
-				EE6A200B2781691D002B5E1A /* ChangeViewButton.swift in Sources */,
-				EEA38C70278511BB00D26A83 /* EmptyCollectionViewCell.swift in Sources */,
-				EE20AEFA2786781D00CB122F /* DetailsViewController.swift in Sources */,
-				EEA8750A277A64B90030A9AD /* MainViewController.swift in Sources */,
+				EE972127278B8C7900CFEF47 /* FavoritesCollectionView.swift in Sources */,
+				EE972123278B8C6300CFEF47 /* button.swift in Sources */,
+				EE97212D278B8C9E00CFEF47 /* EmptyCollectionViewCell.swift in Sources */,
+				EE972134278B8CC500CFEF47 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

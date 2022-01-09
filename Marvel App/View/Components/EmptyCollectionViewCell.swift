@@ -1,8 +1,8 @@
 //
 //  EmptyCollectionViewCell.swift
-//  Marvel App
+//  MarvelApp3
 //
-//  Created by Luciano Berchon on 04/01/22.
+//  Created by Luciano Berchon on 08/01/22.
 //
 
 import UIKit
