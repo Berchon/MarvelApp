@@ -1,17 +1,18 @@
 //
-//  CharactersCollectionViewController.swift
-//  MarvelApp3
+//  Comics.swift
+//  Marvel App
 //
-//  Created by Luciano Berchon on 08/01/22.
+//  Created by Luciano Berchon on 10/01/22.
 //
 
 import UIKit
 
 private let reuseIdentifier = "CustomCell"
 
-class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource {
+class ComicsCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var collectionData: [String] = []
+    let numberOfCol: Int = 3
         
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -23,7 +24,7 @@ class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICol
     
     private func commonInit() {
         // Popula com os dados a serem exibidos
-//        collectionData = ["1 🏆", "2 🐸", "3 🍩", "4 😸", "5 🤡", "6 👾", "7 👻", "8 👩‍🎤", "9 🎸", "10 🍖", "11 🐯", "12 🌋"]
+        collectionData = ["1 🏆", "2 🐸", "3 🍩", "4 😸", "5 🤡", "6 👾", "7 👻", "8 👩‍🎤", "9 🎸", "10 🍖", "11 🐯", "12 🌋"]
         
         var nibName: String
         if collectionData.count == 0 {
@@ -49,10 +50,31 @@ class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICol
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionData.count == 0 {
+            configureContentViewFrame(isEmpty: true)
             return ConfigureEmptyCell(indexPath: indexPath)
         }
         
+        configureContentViewFrame(isEmpty: false)
         return ConfigureCell(indexPath: indexPath)
+    }
+    
+    
+    func configureContentViewFrame(isEmpty: Bool) {
+        let layout = self.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        let spaceBetweenCells = Int(layout.minimumInteritemSpacing)
+        let totalSpaceBetweenColumns = (numberOfCol - 1) * spaceBetweenCells
+        let widthOfCell = (Int(self.frame.size.width) - totalSpaceBetweenColumns) / numberOfCol
+        
+        let x = layout.collectionView?.frame.origin.x
+        let y = layout.collectionView?.frame.origin.y
+        var height = Int(Double(widthOfCell) * 4 / 3)
+        let width = layout.collectionView?.frame.width
+        
+        if isEmpty {
+            height = 50
+        }
+        layout.collectionView?.frame = CGRect(x: x!, y: y!, width: width!, height: CGFloat(height))
     }
     
     
@@ -81,7 +103,7 @@ class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICol
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 10
         
-        numberOfColumns()
+        numberOfColumns(numberOfCol: numberOfCol)
 
         cell.label.text = "\(collectionData[indexPath.row])"
         return cell

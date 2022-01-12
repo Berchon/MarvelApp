@@ -15,7 +15,7 @@ class MainViewController: UITabBarController {
     
     
     @IBAction func chamaDetalhes(_ sender: Any) {
-        navigationController?.pushViewController(DetailsViewController(), animated: true)
+        navigationController?.pushViewController(DetailsScrollViewController(), animated: true)
     }
     
     
