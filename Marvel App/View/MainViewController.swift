@@ -13,8 +13,14 @@ class MainViewController: UITabBarController {
         "MainViewController"
     }
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var buttonSearch: UIButton!
+    @IBOutlet weak var buttonReload: UIButton!
+    @IBOutlet weak var charactersCollection: CharactersCollectionView!
+    @IBOutlet weak var favoritesCollection: FavoritesCollectionView!
     
-    @IBAction func chamaDetalhes(_ sender: Any) {
+    
+    @IBAction func callDetails(_ sender: Any) {
         navigationController?.pushViewController(DetailsScrollViewController(), animated: true)
     }
     
@@ -27,6 +33,11 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavBar()
+
+        let data: [String] = ["1 🏆", "2 🐸", "3 🍩", "4 😸", "5 🤡", "6 👾", "7 👻", "8 👩‍🎤", "9 🎸", "10 🍖", "11 🐯", "12 🌋"]
+        fetch
+        charactersCollection.setData(data: [])
+        favoritesCollection.setData(data:data)
     }
 
     

@@ -59,7 +59,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="arrow.triangle.2.circlepath" catalog="system"/>
                                                 <connections>
-                                                    <action selector="chamaDetalhes:" destination="-1" eventType="touchUpInside" id="lSw-7k-A0c"/>
+                                                    <action selector="callDetails:" destination="-1" eventType="touchUpInside" id="eY4-Wl-f5R"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -93,11 +93,11 @@
                 </viewController>
                 <viewController title="Favorites" id="JH8-dP-OJy">
                     <view key="view" contentMode="scaleToFill" id="2AX-dc-088">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BVy-R3-Mth" customClass="FavoritesCollectionView" customModule="Marvel_App" customModuleProvider="target">
-                                <rect key="frame" x="8" y="0.0" width="398" height="813"/>
+                                <rect key="frame" x="8" y="0.0" width="398" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dae-3Y-Tuy">
                                     <size key="itemSize" width="128" height="128"/>
@@ -119,6 +119,13 @@
                     <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" id="rOV-xs-vJO"/>
                 </viewController>
             </viewControllers>
+            <connections>
+                <outlet property="buttonReload" destination="38X-Ej-Rgw" id="WMV-F0-li0"/>
+                <outlet property="buttonSearch" destination="Z7L-xh-HkL" id="Nii-YO-Pyk"/>
+                <outlet property="charactersCollection" destination="9zR-sg-gwh" id="cgL-cn-dYo"/>
+                <outlet property="favoritesCollection" destination="BVy-R3-Mth" id="p4o-dO-N9j"/>
+                <outlet property="searchBar" destination="Xgx-KK-xa2" id="4dj-5g-Bpb"/>
+            </connections>
             <point key="canvasLocation" x="811.59420289855075" y="94.419642857142847"/>
         </tabBarController>
     </objects>

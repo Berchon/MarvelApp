@@ -7,8 +7,6 @@
 
 import UIKit
 
-private let reuseIdentifier = "CustomCell"
-
 class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var collectionData: [String] = []
@@ -23,18 +21,25 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
     
     private func commonInit() {
         // Popula com os dados a serem exibidos
-        collectionData = ["1 🏆", "2 🐸", "3 🍩", "4 😸", "5 🤡", "6 👾", "7 👻", "8 👩‍🎤", "9 🎸", "10 🍖", "11 🐯", "12 🌋"]
+//        collectionData = ["1 🏆", "2 🐸", "3 🍩", "4 😸", "5 🤡", "6 👾", "7 👻", "8 👩‍🎤", "9 🎸", "10 🍖", "11 🐯", "12 🌋"]
         
-        var nibName: String
-        if collectionData.count == 0 {
-            nibName = "EmptyCollectionViewCell"
-        }
-        else {
-            nibName = "CardCollectionViewCell"
-        }
+//        var nibName: String
+//        if collectionData.count == 0 {
+//            nibName = "EmptyCollectionViewCell"
+//        }
+//        else {
+//            nibName = "CardCollectionViewCell"
+//        }
         
-        let nib = UINib(nibName: nibName, bundle: nil)
-        self.register(nib, forCellWithReuseIdentifier: reuseIdentifier)
+        let nib1 = UINib(nibName: "EmptyCollectionViewCell", bundle: nil)
+        self.register(nib1, forCellWithReuseIdentifier: "EmptyCell")
+        let nib2 = UINib(nibName: "CardCollectionViewCell", bundle: nil)
+        self.register(nib2, forCellWithReuseIdentifier: "CardCell")
+        
+    }
+    
+    public func setData(data: [String]) {
+        collectionData = data
     }
     
 
@@ -62,7 +67,7 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
     
     
     func ConfigureEmptyCell(indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = self.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? EmptyCollectionViewCell else {
+        guard let cell = self.dequeueReusableCell(withReuseIdentifier: "EmptyCell", for: indexPath) as? EmptyCollectionViewCell else {
             fatalError("can't dequeue CustomCell")
         }
         
@@ -79,7 +84,9 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
     
     
     func ConfigureCell(indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = self.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? CardCollectionViewCell else {
+        guard let cell = self.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as? CardCollectionViewCell else {
+            print("data \(collectionData)")
+            print(indexPath.row)
             fatalError("can't dequeue CustomCell")
         }
 
