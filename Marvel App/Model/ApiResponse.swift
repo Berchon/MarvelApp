@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct ApiResponse: Codable {
+    let code: Int
+    let status: String
+    let data: ResponseData
+}

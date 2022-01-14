@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct ResponseData: Codable {
+    let offset: Int
+    let limit: Int
+    let total: Int
+    let count: Int
+    let results: [CharacterModel]
+}
