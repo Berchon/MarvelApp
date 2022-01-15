@@ -7,7 +7,7 @@
 
 import Alamofire
 
-enum CharactersEndpoint: APIConfiguration {
+enum MarvelEndpoint: APIConfiguration {
     case characters(offset: Int, limit: Int, startsWith: String)
     
     case details(characterId: Int)

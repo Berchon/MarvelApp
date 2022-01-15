@@ -17,7 +17,7 @@
 		EE4D772E2791256200358E2F /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D772D2791256200358E2F /* ResponseData.swift */; };
 		EE6DEB5B2792708C00DAD14E /* ConstantsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6DEB5A2792708B00DAD14E /* ConstantsRequest.swift */; };
 		EE6DEB5D279279F800DAD14E /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6DEB5C279279F800DAD14E /* APIConfiguration.swift */; };
-		EE6DEB6027927AF200DAD14E /* CharactersEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6DEB5F27927AF200DAD14E /* CharactersEndpoint.swift */; };
+		EE6DEB6027927AF200DAD14E /* MarvelEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6DEB5F27927AF200DAD14E /* MarvelEndpoint.swift */; };
 		EE8D8E40278CC67D005906B6 /* ComicsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8D8E3F278CC67D005906B6 /* ComicsCollectionView.swift */; };
 		EE8D8E46278D15E6005906B6 /* DetailsScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8D8E45278D15E6005906B6 /* DetailsScrollViewController.swift */; };
 		EE8D8E48278D1614005906B6 /* DetailsScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE8D8E47278D1614005906B6 /* DetailsScrollViewController.xib */; };
@@ -78,7 +78,7 @@
 		EE4D772D2791256200358E2F /* ResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
 		EE6DEB5A2792708B00DAD14E /* ConstantsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsRequest.swift; sourceTree = "<group>"; };
 		EE6DEB5C279279F800DAD14E /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
-		EE6DEB5F27927AF200DAD14E /* CharactersEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersEndpoint.swift; sourceTree = "<group>"; };
+		EE6DEB5F27927AF200DAD14E /* MarvelEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelEndpoint.swift; sourceTree = "<group>"; };
 		EE8D8E3F278CC67D005906B6 /* ComicsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsCollectionView.swift; sourceTree = "<group>"; };
 		EE8D8E45278D15E6005906B6 /* DetailsScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsScrollViewController.swift; sourceTree = "<group>"; };
 		EE8D8E47278D1614005906B6 /* DetailsScrollViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsScrollViewController.xib; sourceTree = "<group>"; };
@@ -165,11 +165,11 @@
 		EE4D77232790CD4300358E2F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EED94E0127936F0D009706AD /* Configuration */,
+				EED94E0027936EE4009706AD /* Authentication */,
 				EE6DEB5E27927AAC00DAD14E /* Endpoints */,
 				EE4D77242790CE8600358E2F /* RequestData.swift */,
 				EE6DEB5A2792708B00DAD14E /* ConstantsRequest.swift */,
-				EE6DEB5C279279F800DAD14E /* APIConfiguration.swift */,
-				EED94DFE279369A2009706AD /* Authentication.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -206,7 +206,7 @@
 		EE6DEB5E27927AAC00DAD14E /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
-				EE6DEB5F27927AF200DAD14E /* CharactersEndpoint.swift */,
+				EE6DEB5F27927AF200DAD14E /* MarvelEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -317,6 +317,22 @@
 				EEAEFA18278BCFD0003E051E /* DetailsViewController_old.swift */,
 			);
 			path = old_files;
+			sourceTree = "<group>";
+		};
+		EED94E0027936EE4009706AD /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				EED94DFE279369A2009706AD /* Authentication.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		EED94E0127936F0D009706AD /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				EE6DEB5C279279F800DAD14E /* APIConfiguration.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -581,7 +597,7 @@
 				EE4D77282790CECA00358E2F /* CharacterModel.swift in Sources */,
 				EE97212D278B8C9E00CFEF47 /* EmptyCollectionViewCell.swift in Sources */,
 				EE4D772C2790D3C400358E2F /* ApiResponse.swift in Sources */,
-				EE6DEB6027927AF200DAD14E /* CharactersEndpoint.swift in Sources */,
+				EE6DEB6027927AF200DAD14E /* MarvelEndpoint.swift in Sources */,
 				EED54084278E755F00084D8F /* SeriesCollectionView.swift in Sources */,
 				EE6DEB5D279279F800DAD14E /* APIConfiguration.swift in Sources */,
 				EE4D772A2790D20900358E2F /* Thumbnail.swift in Sources */,
