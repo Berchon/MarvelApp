@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ResponseData: Codable {
+struct ResponseDataModel: Codable {
     let offset: Int
     let limit: Int
     let total: Int

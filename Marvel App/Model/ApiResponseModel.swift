@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct ApiResponse: Codable {
+struct ApiResponseModel: Codable {
     let code: Int
     let status: String
-    let data: ResponseData
+    let data: ResponseDataModel
 }

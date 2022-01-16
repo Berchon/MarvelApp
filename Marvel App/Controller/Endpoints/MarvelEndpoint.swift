@@ -24,14 +24,23 @@ enum MarvelEndpoint: APIConfiguration {
         switch self {
         case .characters(let offset, let limit, let startsWith):
             let nameStarsWith: String
+            
+            var urlComponents = URLComponents(string: Constants.ProductionServer.basePath)
+            urlComponents?.path = Constants.ProductionServer.charactersPath
+            urlComponents?.queryItems = [
+                URLQueryItem(name: "offset", value: String(offset)),
+                URLQueryItem(name: "limit", value: String(limit))
+            ]
+            
             if !startsWith.isEmpty {
-                nameStarsWith = startsWith.replacingOccurrences(of: " ", with: "")
-//                      nameStar
-                  }
-            else {
-                nameStarsWith = ""
+                let queryItem = URLQueryItem(name: "nameStartsWith", value: startsWith.replacingOccurrences(of: " ", with: ""))
+                urlComponents?.queryItems?.append(queryItem)
             }
-            return  "/v1/public/characters?offset=\(offset)&limit=\(limit)&nameStartsWith=\(nameStarsWith)&\(Authentication.getCredentials())"
+            urlComponents?.queryItems! += Authentication.getCredentials()
+            
+            let urlRequest = URLRequest(url: (urlComponents?.url)!)
+            
+            return urlRequest.url!.absoluteString
         case .details(let characterId):
             return ""
         }
@@ -45,11 +54,10 @@ enum MarvelEndpoint: APIConfiguration {
     }
     
     func asURLRequest() throws -> URLRequest {
-        let basePath = try Constants.ProductionServer.basePath.asURL()
+        let urlComponents = URLComponents(string: path)
+
+        var urlRequest = URLRequest(url: (urlComponents?.url)!)
         
-        var urlRequest = URLRequest(url: basePath.appendingPathComponent(path))
-        
-        // HTTP Method
         urlRequest.httpMethod = method.rawValue
         
         // Common Headers

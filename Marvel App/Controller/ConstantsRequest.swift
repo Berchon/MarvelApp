@@ -9,18 +9,13 @@ import Foundation
 
 struct Constants {
     struct ProductionServer {
-        static let basePath = "http://gateway.marvel.com"
-        static let charactersPath = "/v1/public/characters?"
+        static let basePath = "https://gateway.marvel.com"
+        static let charactersPath = "/v1/public/characters"
     }
     
     struct APIParameters {
         static let publicKey = "c1ceb00bf64e0dbf4bf011e75cda7dc7"
         static let privateKey = "d8eac4245f1711423777511aab03dfec8482c836"
-        // os dados abaixo não são constantes
-//        static let limit = 5
-//        static let page = 0
-//        static let offset = 0
-//        static let nameStartsWith = ""
     }
 }
 

@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var collectionData: [String] = []
+    var collectionData: [CharacterModel] = []
+    var favoritesData: [CharacterModel] = []
+    var textStatus: String = "Loading character..."
         
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -20,26 +23,20 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
 
     
     private func commonInit() {
-        // Popula com os dados a serem exibidos
-//        collectionData = ["1 🏆", "2 🐸", "3 🍩", "4 😸", "5 🤡", "6 👾", "7 👻", "8 👩‍🎤", "9 🎸", "10 🍖", "11 🐯", "12 🌋"]
-        
-//        var nibName: String
-//        if collectionData.count == 0 {
-//            nibName = "EmptyCollectionViewCell"
-//        }
-//        else {
-//            nibName = "CardCollectionViewCell"
-//        }
-        
         let nib1 = UINib(nibName: "EmptyCollectionViewCell", bundle: nil)
         self.register(nib1, forCellWithReuseIdentifier: "EmptyCell")
         let nib2 = UINib(nibName: "CardCollectionViewCell", bundle: nil)
         self.register(nib2, forCellWithReuseIdentifier: "CardCell")
-        
     }
     
-    public func setData(data: [String]) {
+    public func setData(data: [CharacterModel]) {
         collectionData = data
+    }
+    
+    public func refreshData() {
+        self.reloadData()
+        favoritesData.append(collectionData[1])
+        favoritesData.append(collectionData[7])
     }
     
 
@@ -78,7 +75,7 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 10
         
-        cell.label.text = "Nenhum card encontrado"
+        cell.label.text = textStatus
         return cell
     }
     
@@ -94,8 +91,27 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
         cell.layer.cornerRadius = 10
         
         numberOfColumns()
+        
+        let character: CharacterModel = collectionData[indexPath.row]
+        
+//        let isFavorite = favoritesData.contains(where: {$0.id == character.id})
 
-        cell.label.text = "Character \(indexPath.row)"
+        cell.prepareCell(character: character, favoritesData: favoritesData)
+        
+//        if let urlImage = URL(string: character.thumbnail.url){
+//            print("***********\(urlImage)")
+//            cell.imageCharacter.kf.indicatorType = .activity
+////            imageCharacter.kf.setImage(with: urlImage)
+//            cell.imageCharacter.kf.setImage(with: urlImage, placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
+//        }
+        if indexPath.row == 0 {
+            print("===============")
+            print(character)
+            print("===============")
+        }
+        
+//        cell.nameCharacter.text = character.name
+
         return cell
     }
     

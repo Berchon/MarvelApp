@@ -16,5 +16,5 @@ struct CharacterModel: Codable {
         ? description
         : "There is no description for this character."
     }
-    let thumbnail: Thumbnail
+    let thumbnail: ThumbnailModel
 }

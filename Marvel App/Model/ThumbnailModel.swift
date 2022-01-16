@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Thumbnail: Codable {
+struct ThumbnailModel: Codable {
     let path: String
     let ext: String
     var url: String{

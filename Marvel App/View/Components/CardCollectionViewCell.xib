@@ -20,7 +20,7 @@
                         <rect key="frame" x="8" y="8" width="74" height="106"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5u-bZ-hnQ">
-                        <rect key="frame" x="8" y="125" width="35.5" height="17"/>
+                        <rect key="frame" x="8" y="125" width="46" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
@@ -42,6 +42,7 @@
             <color key="backgroundColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="iBq-6k-vah" secondAttribute="trailing" constant="8" id="06q-jh-cvC"/>
+                <constraint firstItem="uQD-fV-wds" firstAttribute="leading" secondItem="v5u-bZ-hnQ" secondAttribute="trailing" constant="8" id="1ug-4u-FAS"/>
                 <constraint firstItem="iBq-6k-vah" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="6iC-Q6-xW7"/>
                 <constraint firstItem="uQD-fV-wds" firstAttribute="top" secondItem="iBq-6k-vah" secondAttribute="bottom" constant="8" id="Hda-Qx-pEj"/>
                 <constraint firstAttribute="bottom" secondItem="v5u-bZ-hnQ" secondAttribute="bottom" constant="8" id="N7r-wb-YxK"/>
@@ -52,7 +53,9 @@
             </constraints>
             <size key="customSize" width="221" height="173"/>
             <connections>
-                <outlet property="label" destination="v5u-bZ-hnQ" id="6pC-QV-Z7L"/>
+                <outlet property="favoriteCharacter" destination="uQD-fV-wds" id="flf-am-NNc"/>
+                <outlet property="imageCharacter" destination="iBq-6k-vah" id="xm3-Rw-MBW"/>
+                <outlet property="nameCharacter" destination="v5u-bZ-hnQ" id="B48-vm-yYw"/>
             </connections>
             <point key="canvasLocation" x="255.07246376811597" y="102.45535714285714"/>
         </collectionViewCell>

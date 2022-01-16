@@ -19,6 +19,12 @@ class MainViewController: UITabBarController {
     @IBOutlet weak var charactersCollection: CharactersCollectionView!
     @IBOutlet weak var favoritesCollection: FavoritesCollectionView!
     
+    var charactersData: [CharacterModel] = []
+    var favoritesData: [CharacterModel] = []
+    var offset: Int = 0
+    var limit: Int = 11
+    var total: Int = 0
+    
     
     @IBAction func callDetails(_ sender: Any) {
         navigationController?.pushViewController(DetailsScrollViewController(), animated: true)
@@ -33,11 +39,33 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavBar()
+        
+        loadCharactersData()
 
         let data: [String] = ["1 🏆", "2 🐸", "3 🍩", "4 😸", "5 🤡", "6 👾", "7 👻", "8 👩‍🎤", "9 🎸", "10 🍖", "11 🐯", "12 🌋"]
         
-        charactersCollection.setData(data: [])
+        charactersCollection.setData(data: self.charactersData)
         favoritesCollection.setData(data:data)
+    }
+    
+    func loadCharactersData() {
+        MarvelClient.getCharacters(offset: offset, limit: limit, startsWith: "") { results, error in
+            if(results != nil){
+                
+                self.charactersData += (results?.data.results)!
+                self.total = (results?.data.total)!
+                DispatchQueue.main.async {
+                    self.charactersCollection.setData(data: self.charactersData)
+                    self.charactersData += (results?.data.results)!
+                    self.total = (results?.data.total)!
+                    self.charactersCollection.textStatus = self.total < 1 ? "Not found character." : ""
+                    self.charactersCollection.refreshData()
+                }
+            }
+            else{
+                self.charactersCollection.textStatus = "Error!"
+            }
+        }
     }
 
     

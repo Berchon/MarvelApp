@@ -103,7 +103,7 @@ class SeriesCollectionView: UICollectionView, UICollectionViewDelegate, UICollec
         
         numberOfColumns(numberOfCol: numberOfCol)
 
-        cell.label.text = "\(collectionData[indexPath.row])"
+        cell.nameCharacter.text = "\(collectionData[indexPath.row])"
         return cell
     }
     

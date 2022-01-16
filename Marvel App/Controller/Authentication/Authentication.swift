@@ -8,11 +8,16 @@
 import SwiftHash
 
 class Authentication {
-    static func getCredentials() -> String {
+    static func getCredentials() -> [URLQueryItem] {
         let ts = String(Date().timeIntervalSince1970)
         let privateKey = Constants.APIParameters.privateKey
         let publicKey = Constants.APIParameters.publicKey
         let hash = MD5(ts+privateKey+publicKey).lowercased()
-        return "ts=\(ts)&apikey=\(publicKey)&hash=\(hash)"
+        return [
+            URLQueryItem(name: "ts", value: ts),
+            URLQueryItem(name: "apikey", value: publicKey),
+            URLQueryItem(name: "hash", value: hash)
+        ]
+//        return "ts=\(ts)&apikey=\(publicKey)&hash=\(hash)"
     }
 }

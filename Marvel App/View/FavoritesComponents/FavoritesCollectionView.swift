@@ -80,7 +80,7 @@ class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICol
         
         numberOfColumns()
 
-        cell.label.text = "\(collectionData[indexPath.row])"
+        cell.nameCharacter.text = "\(collectionData[indexPath.row])"
         return cell
     }
     
