@@ -48,6 +48,12 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2022 MARVEL" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Je7-5g-lxc">
+                                <rect key="frame" x="8" y="839.5" width="398" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -56,7 +62,10 @@
                             <constraint firstItem="QzY-8b-lOv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NRk-I9-SCz"/>
                             <constraint firstItem="h55-6e-eaV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="QS9-5r-yA4"/>
                             <constraint firstItem="h55-6e-eaV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="bdF-pn-vqN"/>
+                            <constraint firstItem="Je7-5g-lxc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="ehr-Im-p2c"/>
                             <constraint firstItem="QzY-8b-lOv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ixa-jB-4F4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Je7-5g-lxc" secondAttribute="trailing" constant="8" id="kg9-g5-d8m"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Je7-5g-lxc" secondAttribute="bottom" constant="8" id="nDR-9G-dm7"/>
                             <constraint firstAttribute="bottom" secondItem="QzY-8b-lOv" secondAttribute="bottom" id="tB8-Mq-iFE"/>
                         </constraints>
                     </view>

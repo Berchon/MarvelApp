@@ -8,11 +8,19 @@
 import UIKit
 import Kingfisher
 
+protocol MyCollectionViewDelegate: class {
+    func loadMoreData()
+    func pushDetailsView()
+}
+
 class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    weak var delegation: MyCollectionViewDelegate?
     
     var collectionData: [CharacterModel] = []
     var favoritesData: [CharacterModel] = []
-    var textStatus: String = "Loading character..."
+    var textStatus: String = ""
+    var total: Int = 0
         
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -29,27 +37,33 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
         self.register(nib2, forCellWithReuseIdentifier: "CardCell")
     }
     
-    public func setData(data: [CharacterModel]) {
+    public func setData(data: [CharacterModel], total: Int) {
+//        self.textStatus = "Not found character."
         collectionData = data
+        self.total = total
+    }
+    
+    public func setFavorites(data: [CharacterModel]) {
+        favoritesData = data
     }
     
     public func refreshData() {
         self.reloadData()
-        favoritesData.append(collectionData[1])
-        favoritesData.append(collectionData[7])
     }
     
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
+        delegation?.pushDetailsView()
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionData.count == 0 {
+//
             return 1
         }
-        
+        self.textStatus = "Not found character."
         return collectionData.count
     }
     
@@ -82,8 +96,6 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
     
     func ConfigureCell(indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = self.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as? CardCollectionViewCell else {
-            print("data \(collectionData)")
-            print(indexPath.row)
             fatalError("can't dequeue CustomCell")
         }
 
@@ -94,24 +106,27 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
         
         let character: CharacterModel = collectionData[indexPath.row]
         
-//        let isFavorite = favoritesData.contains(where: {$0.id == character.id})
+        let isFavorite = favoritesData.contains(where: {$0.id == character.id})
 
-        cell.prepareCell(character: character, favoritesData: favoritesData)
-        
-//        if let urlImage = URL(string: character.thumbnail.url){
-//            print("***********\(urlImage)")
-//            cell.imageCharacter.kf.indicatorType = .activity
-////            imageCharacter.kf.setImage(with: urlImage)
-//            cell.imageCharacter.kf.setImage(with: urlImage, placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
-//        }
-        if indexPath.row == 0 {
-            print("===============")
-            print(character)
-            print("===============")
+        if isFavorite {
+            cell.favoriteCharacter.setImage(UIImage(named: "favorite_selected"), for: .normal)
+        }
+        else {
+            cell.favoriteCharacter.setImage(UIImage(named: "favorite_regular"), for: .normal)
+        }
+
+
+        cell.nameCharacter.text = character.name
+
+        if let urlImage = URL(string: character.thumbnail.url){
+            cell.imageCharacter.kf.indicatorType = .activity
+            cell.imageCharacter.kf.setImage(with: urlImage, placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
+        }
+
+        if(indexPath.item == collectionData.count - 10 && collectionData.count != total){
+            delegation?.loadMoreData()
         }
         
-//        cell.nameCharacter.text = character.name
-
         return cell
     }
     

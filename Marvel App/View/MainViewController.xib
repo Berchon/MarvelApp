@@ -59,7 +59,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="arrow.triangle.2.circlepath" catalog="system"/>
                                                 <connections>
-                                                    <action selector="callDetails:" destination="-1" eventType="touchUpInside" id="eY4-Wl-f5R"/>
+                                                    <action selector="reloadData:" destination="-1" eventType="touchUpInside" id="WK7-yc-n2U"/>
                                                 </connections>
                                             </button>
                                         </subviews>

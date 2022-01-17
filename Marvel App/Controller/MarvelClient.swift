@@ -36,6 +36,7 @@ class MarvelClient {
             }
             else {
                 //treat error here
+                
             }
         }
     }

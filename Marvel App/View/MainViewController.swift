@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UITabBarController {
+class MainViewController: UITabBarController, MyCollectionViewDelegate {
     
     override var nibName: String? {
         "MainViewController"
@@ -22,12 +22,12 @@ class MainViewController: UITabBarController {
     var charactersData: [CharacterModel] = []
     var favoritesData: [CharacterModel] = []
     var offset: Int = 0
-    var limit: Int = 11
+    var limit: Int = 20
     var total: Int = 0
     
     
-    @IBAction func callDetails(_ sender: Any) {
-        navigationController?.pushViewController(DetailsScrollViewController(), animated: true)
+    @IBAction func reloadData(_ sender: Any) {
+        
     }
     
     
@@ -38,27 +38,54 @@ class MainViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        charactersCollection.delegation = self
+        
         configureNavBar()
+        
+//        loadFavoriteData()
         
         loadCharactersData()
 
-        let data: [String] = ["1 🏆", "2 🐸", "3 🍩", "4 😸", "5 🤡", "6 👾", "7 👻", "8 👩‍🎤", "9 🎸", "10 🍖", "11 🐯", "12 🌋"]
+//        let data: [String] = ["1 🏆", "2 🐸", "3 🍩", "4 😸", "5 🤡", "6 👾", "7 👻", "8 👩‍🎤", "9 🎸", "10 🍖", "11 🐯", "12 🌋"]
         
-        charactersCollection.setData(data: self.charactersData)
-        favoritesCollection.setData(data:data)
+        charactersCollection.setData(data: self.charactersData, total: 0)
+        favoritesCollection.setData(data: self.favoritesData)
     }
     
+    func loadFavoriteData() {
+        self.favoritesCollection.textStatus = "Loading favorites..."
+        //apagar a definicao de favotitos (provisório) da funcao loadCharactersData
+        //tirar comentário da chamada dessa função no viewDidLoad
+        
+        self.favoritesData.append(charactersData[0])
+        self.favoritesData.append(charactersData[5])
+        self.favoritesData.append(charactersData[6])
+        self.favoritesData.append(charactersData[19])
+        
+        favoritesCollection.setData(data: self.favoritesData)
+        charactersCollection.setFavorites(data: self.favoritesData)
+    }
+
+    
     func loadCharactersData() {
+        self.charactersCollection.textStatus = "Loading character..."
+        self.charactersCollection.refreshData()
         MarvelClient.getCharacters(offset: offset, limit: limit, startsWith: "") { results, error in
             if(results != nil){
                 
                 self.charactersData += (results?.data.results)!
+                
                 self.total = (results?.data.total)!
                 DispatchQueue.main.async {
-                    self.charactersCollection.setData(data: self.charactersData)
-                    self.charactersData += (results?.data.results)!
+//                    self.charactersCollection.textStatus = "Loading character..."
+                    self.charactersCollection.setData(data: self.charactersData, total: self.total)
+//                    self.charactersData += (results?.data.results)!
+                    
+                    self.loadFavoriteData()
+                    
                     self.total = (results?.data.total)!
-                    self.charactersCollection.textStatus = self.total < 1 ? "Not found character." : ""
+//                    self.charactersCollection.textStatus = self.total < 1 ? "Not found character." : ""
                     self.charactersCollection.refreshData()
                 }
             }
@@ -66,6 +93,15 @@ class MainViewController: UITabBarController {
                 self.charactersCollection.textStatus = "Error!"
             }
         }
+    }
+    
+    func loadMoreData() {
+        self.offset += self.limit
+        loadCharactersData()
+    }
+    
+    func pushDetailsView() {
+        navigationController?.pushViewController(DetailsScrollViewController(), animated: true)
     }
 
     
