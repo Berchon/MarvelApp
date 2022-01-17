@@ -9,7 +9,8 @@ import UIKit
 
 class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var collectionData: [String] = []
+    var collectionData: [CharacterModel] = []
+    var textStatus: String = ""
         
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -20,9 +21,6 @@ class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICol
 
     
     private func commonInit() {
-        // Popula com os dados a serem exibidos
-//        collectionData = ["1 🏆", "2 🐸", "3 🍩", "4 😸", "5 🤡", "6 👾", "7 👻", "8 👩‍🎤", "9 🎸", "10 🍖", "11 🐯", "12 🌋"]
-        
         let nib1 = UINib(nibName: "EmptyCollectionViewCell", bundle: nil)
         self.register(nib1, forCellWithReuseIdentifier: "EmptyCell")
         let nib2 = UINib(nibName: "CardCollectionViewCell", bundle: nil)
@@ -30,16 +28,20 @@ class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICol
     }
     
     
-    public func setData(data: [String]) {
+    public func setData(data: [CharacterModel]) {
         collectionData = data
+        refreshData()
     }
     
+    public func refreshData() {
+        self.reloadData()
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionData.count == 0 {
             return 1
         }
-        
+        self.textStatus = "Not found favorites."
         return collectionData.count
     }
     
@@ -65,7 +67,7 @@ class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICol
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 10
         
-        cell.label.text = "Nenhum card encontrado"
+        cell.label.text = self.textStatus
         return cell
     }
     
@@ -79,8 +81,12 @@ class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICol
         cell.layer.cornerRadius = 10
         
         numberOfColumns()
+        
+        let favorite: CharacterModel = collectionData[indexPath.row]
+        
+        cell.favoriteCharacter.setImage(UIImage(named: "favorite_selected"), for: .normal)
 
-        cell.nameCharacter.text = "\(collectionData[indexPath.row])"
+        cell.nameCharacter.text = favorite.name
         return cell
     }
     
