@@ -10,7 +10,7 @@ import UIKit
 class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var collectionData: [CharacterModel] = []
-    var textStatus: String = ""
+    var textStatus: String = "Not found favorites."
         
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -41,7 +41,6 @@ class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICol
         if collectionData.count == 0 {
             return 1
         }
-        self.textStatus = "Not found favorites."
         return collectionData.count
     }
     

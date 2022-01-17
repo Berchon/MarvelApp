@@ -27,7 +27,15 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate {
     
     
     @IBAction func reloadData(_ sender: Any) {
+        self.offset = 0
+        self.total = 0
+        charactersData = []
         
+        self.charactersCollection.setData(data: self.charactersData, total: self.total)
+
+        self.charactersCollection.refreshData()
+        
+        loadCharactersData()
     }
     
     
@@ -54,7 +62,6 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate {
     }
     
     func loadFavoriteData() {
-        self.favoritesCollection.textStatus = "Loading favorites..."
         //apagar a definicao de favotitos (provisório) da funcao loadCharactersData
         //tirar comentário da chamada dessa função no viewDidLoad
         
@@ -69,7 +76,6 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate {
 
     
     func loadCharactersData() {
-        self.charactersCollection.textStatus = "Loading character..."
         self.charactersCollection.refreshData()
         MarvelClient.getCharacters(offset: offset, limit: limit, startsWith: "") { results, error in
             if(results != nil){

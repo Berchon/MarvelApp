@@ -19,7 +19,7 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
     
     var collectionData: [CharacterModel] = []
     var favoritesData: [CharacterModel] = []
-    var textStatus: String = ""
+    var textStatus: String = "Not found characters."
     var total: Int = 0
         
     required init?(coder aDecoder: NSCoder) {
@@ -63,7 +63,6 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
 //
             return 1
         }
-        self.textStatus = "Not found character."
         return collectionData.count
     }
     

@@ -15,7 +15,7 @@ class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var favoriteCharacter: UIButton!
     
     @IBAction func pressButton(_ sender: Any) {
-        
+        print("clicou")
     }
     
     override func awakeFromNib() {
