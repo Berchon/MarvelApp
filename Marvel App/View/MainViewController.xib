@@ -20,7 +20,7 @@
             <viewControllers>
                 <viewController title="Characters" id="2Q4-bc-Ej6">
                     <view key="view" contentMode="scaleToFill" id="2ly-az-dNR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="9mH-9w-7UT">
@@ -47,6 +47,9 @@
                                                 <color key="tintColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
+                                                <connections>
+                                                    <action selector="SearchButtonTapAction:" destination="-1" eventType="touchUpInside" id="qTz-yh-tYC"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38X-Ej-Rgw" customClass="button" customModule="Marvel_App" customModuleProvider="target">
                                                 <rect key="frame" x="38" y="0.0" width="32" height="32"/>

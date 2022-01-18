@@ -26,9 +26,25 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
     var total: Int = 0
     
     
+    
+    @IBAction func SearchButtonTapAction(_ sender: Any) {
+        guard let startsWith = searchBar.text else { return }
+        print(startsWith)
+        self.offset = 0
+        self.total = 0
+        charactersData = []
+        
+        self.charactersCollection.setData(data: self.charactersData, total: self.total)
+
+        self.charactersCollection.refreshData()
+        
+        loadCharactersData(nameStartsWith: startsWith)
+    }
+    
     @IBAction func reloadData(_ sender: Any) {
         self.offset = 0
         self.total = 0
+        searchBar.text = ""
         charactersData = []
         
         self.charactersCollection.setData(data: self.charactersData, total: self.total)
@@ -66,9 +82,9 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
     }
 
     
-    func loadCharactersData() {
+    func loadCharactersData(nameStartsWith: String = "") {
         self.charactersCollection.refreshData()
-        MarvelClient.getCharacters(offset: offset, limit: limit, startsWith: "") { results, error in
+        MarvelClient.getCharacters(offset: offset, limit: limit, startsWith: nameStartsWith) { results, error in
             if(results != nil){
                 self.charactersData += (results?.data.results)!
                 self.total = (results?.data.total)!
@@ -91,8 +107,8 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
         loadCharactersData()
     }
     
-    func pushDetailsView() {
-        navigationController?.pushViewController(DetailsScrollViewController(), animated: true)
+    func pushDetailsView(character: CharacterModel) {
+        navigationController?.pushViewController(DetailsScrollViewController(character: character), animated: true)
     }
     
     

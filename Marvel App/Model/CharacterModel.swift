@@ -12,9 +12,7 @@ struct CharacterModel: Codable {
     let name: String
     let description: String
     var verifiedDescription: String {
-        return !description.isEmpty
-        ? description
-        : "There is no description for this character."
+        return !description.isEmpty ? description : "There is no description for this character."
     }
     let thumbnail: ThumbnailModel
 }

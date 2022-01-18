@@ -10,7 +10,7 @@ import Kingfisher
 
 protocol MyCollectionViewDelegate: class {
     func loadMoreData()
-    func pushDetailsView()
+    func pushDetailsView(character: CharacterModel)
     func isFavoritedNow(favorite: CharacterModel)
 }
 
@@ -54,8 +54,8 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
     
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
-        delegation?.pushDetailsView()
+        let character: CharacterModel = collectionData[indexPath.row]
+        delegation?.pushDetailsView(character: character)
     }
     
     
