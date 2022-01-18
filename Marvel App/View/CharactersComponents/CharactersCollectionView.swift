@@ -11,13 +11,12 @@ import Kingfisher
 protocol MyCollectionViewDelegate: class {
     func loadMoreData()
     func pushDetailsView()
-    func isFavoritedNow(favorite: CharacterModel) -> Bool
+    func isFavoritedNow(favorite: CharacterModel)
 }
 
 class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource {
     
     weak var delegation: MyCollectionViewDelegate?
-//    @IBOutlet wear var characterCollectionCell: characterc
     
     var collectionData: [CharacterModel] = []
     var favoritesData: [CharacterModel] = []
@@ -47,6 +46,7 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
     
     public func setFavorites(data: [CharacterModel]) {
         favoritesData = data
+        self.refreshData()
     }
     
     public func refreshData() {
@@ -62,9 +62,9 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionData.count == 0 {
-//
             return 1
         }
+        
         return collectionData.count
     }
     
@@ -130,16 +130,8 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
         }
         
         cell.favoriteTapAction = { cell in
-            print("pressionou")
             let favorite = character
-            if let isFavoritedNow = self.delegation?.isFavoritedNow(favorite: favorite) {
-                if isFavoritedNow {
-                    cell.favoriteCharacter.setImage(UIImage(named: "favorite_selected"), for: .normal)
-                }
-                else {
-                    cell.favoriteCharacter.setImage(UIImage(named: "favorite_regular"), for: .normal)
-                }
-            }
+            self.delegation?.isFavoritedNow(favorite: favorite)
         }
         
         return cell

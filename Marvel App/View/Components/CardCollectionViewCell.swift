@@ -24,25 +24,7 @@ class CardCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var favoriteCharacter: UIButton!
     
     @IBAction func pressButton(_ sender: Any) {
-        favoriteTapAction?(self)
-//        guard let id: Int = Int(id.text!) else { return }
-//        print(id)
-//        delegation?.isFavoritedNow()
-//        delegation?.teste()
-        
-//        if let isFavoritedNow = delegation?.isFavoritedNow() {
-//            print(isFavoritedNow)
-//            if isFavoritedNow == nil {
-//                favoriteCharacter.setImage(UIImage(named: "favorite_selected"), for: .normal)
-//            }
-//            else {
-//                favoriteCharacter.setImage(UIImage(named: "favorite_regular"), for: .normal)
-//            }
-//        }
-//        else {
-//            print("erro")
-//        }
-        
+        favoriteTapAction?(self)        
     }
     
     override func awakeFromNib() {

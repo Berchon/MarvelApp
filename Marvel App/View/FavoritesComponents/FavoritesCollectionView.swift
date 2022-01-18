@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol MyFavoriteViewDelegate: class {
+    func removeFavorites(index: Int)
+}
+
 class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    weak var delegation: MyFavoriteViewDelegate?
     
     var collectionData: [CharacterModel] = []
     var textStatus: String = "Not found favorites."
@@ -41,6 +47,7 @@ class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICol
         if collectionData.count == 0 {
             return 1
         }
+        
         return collectionData.count
     }
     
@@ -81,11 +88,22 @@ class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICol
         
         numberOfColumns()
         
-        let favorite: CharacterModel = collectionData[indexPath.row]
+        let character: CharacterModel = collectionData[indexPath.row]
         
         cell.favoriteCharacter.setImage(UIImage(named: "favorite_selected"), for: .normal)
+        
+        cell.nameCharacter.text = character.name
+        cell.id.text = String(character.id)
 
-        cell.nameCharacter.text = favorite.name
+        if let urlImage = URL(string: character.thumbnail.url){
+            cell.imageCharacter.kf.indicatorType = .activity
+            cell.imageCharacter.kf.setImage(with: urlImage, placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
+        }
+        
+        cell.favoriteTapAction = { cell in
+            self.delegation?.removeFavorites(index: indexPath.item)
+        }
+        
         return cell
     }
     

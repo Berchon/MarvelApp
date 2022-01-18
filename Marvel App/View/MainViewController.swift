@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UITabBarController, MyCollectionViewDelegate {
+class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavoriteViewDelegate {
 
     override var nibName: String? {
         "MainViewController"
@@ -48,6 +48,7 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate {
         super.viewDidLoad()
         
         charactersCollection.delegation = self
+        favoritesCollection.delegation = self
         
         configureNavBar()
         
@@ -65,10 +66,10 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate {
         //apagar a definicao de favotitos (provisório) da funcao loadCharactersData
         //tirar comentário da chamada dessa função no viewDidLoad
         
-        self.favoritesData.append(charactersData[0])
-        self.favoritesData.append(charactersData[5])
-        self.favoritesData.append(charactersData[6])
-        self.favoritesData.append(charactersData[19])
+//        self.favoritesData.append(charactersData[0])
+//        self.favoritesData.append(charactersData[5])
+//        self.favoritesData.append(charactersData[6])
+//        self.favoritesData.append(charactersData[19])
         
         favoritesCollection.setData(data: self.favoritesData)
         charactersCollection.setFavorites(data: self.favoritesData)
@@ -88,7 +89,7 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate {
                     self.charactersCollection.setData(data: self.charactersData, total: self.total)
 //                    self.charactersData += (results?.data.results)!
                     
-                    self.loadFavoriteData()
+//                    self.loadFavoriteData()
                     
                     self.total = (results?.data.total)!
 //                    self.charactersCollection.textStatus = self.total < 1 ? "Not found character." : ""
@@ -110,33 +111,43 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate {
         navigationController?.pushViewController(DetailsScrollViewController(), animated: true)
     }
     
-    func isFavoritedNow(favorite: CharacterModel) -> Bool {
-        if let index = self.favoritesData.firstIndex(where: {$0.id == favorite.id}) {
-//        if index != nil {
-            //remove favorite
-            removeFavorites(index: index)
+    
+    func isFavoritedNow(favorite: CharacterModel) {
+        print("aqui")
+//        DispatchQueue.main.async {
+            if let index = self.favoritesData.firstIndex(where: {$0.id == favorite.id}) {
+                self.removeFavorites(index: index)
+                
+                self.favoritesCollection.setData(data: self.favoritesData)
+                self.charactersCollection.setFavorites(data: self.favoritesData)
+                return //false
+            }
+            self.addFavorites(favorite: favorite)
             
-            favoritesCollection.setData(data: self.favoritesData)
-            charactersCollection.setFavorites(data: self.favoritesData)
-            return false
-        }
-
-        // add favorite
-        addFavorites(favorite: favorite)
-        
-        favoritesCollection.setData(data: self.favoritesData)
-        charactersCollection.setFavorites(data: self.favoritesData)
-        return true
+            print("addfavo")
+//            self.charactersCollection.refreshData()
+            self.favoritesCollection.setData(data: self.favoritesData)
+            self.charactersCollection.setFavorites(data: self.favoritesData)
+//            self.charactersCollection.refreshData()
+            return //true
+//        }
     }
     
     func removeFavorites(index: Int) {
+        print("remove")
         self.favoritesData.remove(at: index)
-        print("aaa")
+        favoritesCollection.setData(data: self.favoritesData)
+        charactersCollection.setFavorites(data: self.favoritesData)
     }
     
     func addFavorites(favorite: CharacterModel) {
         if let index = self.favoritesData.firstIndex(where: {$0.name > favorite.name}) {
             self.favoritesData.insert(favorite, at: index)
+//            favoritesCollection.setData(data: self.favoritesData)
+//            charactersCollection.setFavorites(data: self.favoritesData)
+        }
+        else {
+            self.favoritesData.append(favorite)
         }
     }
 
