@@ -52,25 +52,15 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
         
         configureNavBar()
         
-//        loadFavoriteData()
+        loadFavoriteData()
         
         loadCharactersData()
 
-//        let data: [String] = ["1 🏆", "2 🐸", "3 🍩", "4 😸", "5 🤡", "6 👾", "7 👻", "8 👩‍🎤", "9 🎸", "10 🍖", "11 🐯", "12 🌋"]
-        
         charactersCollection.setData(data: self.charactersData, total: 0)
         favoritesCollection.setData(data: self.favoritesData)
     }
     
     func loadFavoriteData() {
-        //apagar a definicao de favotitos (provisório) da funcao loadCharactersData
-        //tirar comentário da chamada dessa função no viewDidLoad
-        
-//        self.favoritesData.append(charactersData[0])
-//        self.favoritesData.append(charactersData[5])
-//        self.favoritesData.append(charactersData[6])
-//        self.favoritesData.append(charactersData[19])
-        
         favoritesCollection.setData(data: self.favoritesData)
         charactersCollection.setFavorites(data: self.favoritesData)
     }
@@ -80,19 +70,13 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
         self.charactersCollection.refreshData()
         MarvelClient.getCharacters(offset: offset, limit: limit, startsWith: "") { results, error in
             if(results != nil){
-                
                 self.charactersData += (results?.data.results)!
-                
                 self.total = (results?.data.total)!
+                
                 DispatchQueue.main.async {
-//                    self.charactersCollection.textStatus = "Loading character..."
                     self.charactersCollection.setData(data: self.charactersData, total: self.total)
-//                    self.charactersData += (results?.data.results)!
-                    
-//                    self.loadFavoriteData()
                     
                     self.total = (results?.data.total)!
-//                    self.charactersCollection.textStatus = self.total < 1 ? "Not found character." : ""
                     self.charactersCollection.refreshData()
                 }
             }
@@ -113,24 +97,19 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
     
     
     func isFavoritedNow(favorite: CharacterModel) {
-        print("aqui")
-//        DispatchQueue.main.async {
             if let index = self.favoritesData.firstIndex(where: {$0.id == favorite.id}) {
                 self.removeFavorites(index: index)
                 
                 self.favoritesCollection.setData(data: self.favoritesData)
                 self.charactersCollection.setFavorites(data: self.favoritesData)
-                return //false
+                return
             }
             self.addFavorites(favorite: favorite)
             
-            print("addfavo")
-//            self.charactersCollection.refreshData()
             self.favoritesCollection.setData(data: self.favoritesData)
             self.charactersCollection.setFavorites(data: self.favoritesData)
-//            self.charactersCollection.refreshData()
-            return //true
-//        }
+            return
+
     }
     
     func removeFavorites(index: Int) {
@@ -143,8 +122,6 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
     func addFavorites(favorite: CharacterModel) {
         if let index = self.favoritesData.firstIndex(where: {$0.name > favorite.name}) {
             self.favoritesData.insert(favorite, at: index)
-//            favoritesCollection.setData(data: self.favoritesData)
-//            charactersCollection.setFavorites(data: self.favoritesData)
         }
         else {
             self.favoritesData.append(favorite)

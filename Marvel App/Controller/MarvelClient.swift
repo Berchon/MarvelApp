@@ -19,7 +19,6 @@ class MarvelClient {
     }
     
     static func getCharacters(offset: Int, limit: Int, startsWith: String, completion: @escaping (ApiResponseModel?, Error?) -> Void) {
-//        (ResponseDataModel?, Error?) -> Void) {
         performRequest(route: .characters(offset: offset, limit: limit, startsWith: startsWith)) { response in
             if response?.error == nil {
                 if let data = response?.data, let utf8Text = String(data: data, encoding: .utf8){

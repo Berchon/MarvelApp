@@ -8,14 +8,8 @@
 import UIKit
 import Kingfisher
 
-//protocol MyCollectionViewCellDelegate: class {
-//    func isFavoritedNow()
-//    func teste()
-//}
-
 class CardCollectionViewCell: UICollectionViewCell {
-    
-//    weak var delegation: MyCollectionViewCellDelegate?
+
     var favoriteTapAction: ((CardCollectionViewCell) -> Void)?
 
     @IBOutlet weak var id: UILabel!

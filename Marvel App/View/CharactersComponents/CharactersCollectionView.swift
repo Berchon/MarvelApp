@@ -39,7 +39,6 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
     }
     
     public func setData(data: [CharacterModel], total: Int) {
-//        self.textStatus = "Not found character."
         collectionData = data
         self.total = total
     }
@@ -62,9 +61,10 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionData.count == 0 {
+//
             return 1
         }
-        
+        self.textStatus = "Not found character."
         return collectionData.count
     }
     

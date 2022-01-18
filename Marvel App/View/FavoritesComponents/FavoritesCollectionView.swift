@@ -47,7 +47,7 @@ class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICol
         if collectionData.count == 0 {
             return 1
         }
-        
+        self.textStatus = "Not found favorites."
         return collectionData.count
     }
     

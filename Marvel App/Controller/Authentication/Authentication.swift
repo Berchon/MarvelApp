@@ -18,6 +18,5 @@ class Authentication {
             URLQueryItem(name: "apikey", value: publicKey),
             URLQueryItem(name: "hash", value: hash)
         ]
-//        return "ts=\(ts)&apikey=\(publicKey)&hash=\(hash)"
     }
 }

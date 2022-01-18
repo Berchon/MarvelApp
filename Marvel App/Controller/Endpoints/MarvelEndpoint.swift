@@ -23,8 +23,6 @@ enum MarvelEndpoint: APIConfiguration {
     var path: String {
         switch self {
         case .characters(let offset, let limit, let startsWith):
-            let nameStarsWith: String
-            
             var urlComponents = URLComponents(string: Constants.ProductionServer.basePath)
             urlComponents?.path = Constants.ProductionServer.charactersPath
             urlComponents?.queryItems = [
