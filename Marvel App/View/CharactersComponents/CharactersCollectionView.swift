@@ -11,11 +11,13 @@ import Kingfisher
 protocol MyCollectionViewDelegate: class {
     func loadMoreData()
     func pushDetailsView()
+    func isFavoritedNow(favorite: CharacterModel) -> Bool
 }
 
 class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource {
     
     weak var delegation: MyCollectionViewDelegate?
+//    @IBOutlet wear var characterCollectionCell: characterc
     
     var collectionData: [CharacterModel] = []
     var favoritesData: [CharacterModel] = []
@@ -116,6 +118,7 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
 
 
         cell.nameCharacter.text = character.name
+        cell.id.text = String(character.id)
 
         if let urlImage = URL(string: character.thumbnail.url){
             cell.imageCharacter.kf.indicatorType = .activity
@@ -124,6 +127,19 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
 
         if(indexPath.item == collectionData.count - 10 && collectionData.count != total){
             delegation?.loadMoreData()
+        }
+        
+        cell.favoriteTapAction = { cell in
+            print("pressionou")
+            let favorite = character
+            if let isFavoritedNow = self.delegation?.isFavoritedNow(favorite: favorite) {
+                if isFavoritedNow {
+                    cell.favoriteCharacter.setImage(UIImage(named: "favorite_selected"), for: .normal)
+                }
+                else {
+                    cell.favoriteCharacter.setImage(UIImage(named: "favorite_regular"), for: .normal)
+                }
+            }
         }
         
         return cell

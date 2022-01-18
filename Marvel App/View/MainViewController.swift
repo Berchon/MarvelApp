@@ -8,7 +8,7 @@
 import UIKit
 
 class MainViewController: UITabBarController, MyCollectionViewDelegate {
-    
+
     override var nibName: String? {
         "MainViewController"
     }
@@ -108,6 +108,36 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate {
     
     func pushDetailsView() {
         navigationController?.pushViewController(DetailsScrollViewController(), animated: true)
+    }
+    
+    func isFavoritedNow(favorite: CharacterModel) -> Bool {
+        if let index = self.favoritesData.firstIndex(where: {$0.id == favorite.id}) {
+//        if index != nil {
+            //remove favorite
+            removeFavorites(index: index)
+            
+            favoritesCollection.setData(data: self.favoritesData)
+            charactersCollection.setFavorites(data: self.favoritesData)
+            return false
+        }
+
+        // add favorite
+        addFavorites(favorite: favorite)
+        
+        favoritesCollection.setData(data: self.favoritesData)
+        charactersCollection.setFavorites(data: self.favoritesData)
+        return true
+    }
+    
+    func removeFavorites(index: Int) {
+        self.favoritesData.remove(at: index)
+        print("aaa")
+    }
+    
+    func addFavorites(favorite: CharacterModel) {
+        if let index = self.favoritesData.firstIndex(where: {$0.name > favorite.name}) {
+            self.favoritesData.insert(favorite, at: index)
+        }
     }
 
     

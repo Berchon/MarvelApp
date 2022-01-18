@@ -8,45 +8,45 @@
 import UIKit
 import Kingfisher
 
-class CardCollectionViewCell: UICollectionViewCell {
+//protocol MyCollectionViewCellDelegate: class {
+//    func isFavoritedNow()
+//    func teste()
+//}
 
+class CardCollectionViewCell: UICollectionViewCell {
+    
+//    weak var delegation: MyCollectionViewCellDelegate?
+    var favoriteTapAction: ((CardCollectionViewCell) -> Void)?
+
+    @IBOutlet weak var id: UILabel!
     @IBOutlet weak var imageCharacter: UIImageView!
     @IBOutlet weak var nameCharacter: UILabel!
     @IBOutlet weak var favoriteCharacter: UIButton!
     
     @IBAction func pressButton(_ sender: Any) {
-        print("clicou")
+        favoriteTapAction?(self)
+//        guard let id: Int = Int(id.text!) else { return }
+//        print(id)
+//        delegation?.isFavoritedNow()
+//        delegation?.teste()
+        
+//        if let isFavoritedNow = delegation?.isFavoritedNow() {
+//            print(isFavoritedNow)
+//            if isFavoritedNow == nil {
+//                favoriteCharacter.setImage(UIImage(named: "favorite_selected"), for: .normal)
+//            }
+//            else {
+//                favoriteCharacter.setImage(UIImage(named: "favorite_regular"), for: .normal)
+//            }
+//        }
+//        else {
+//            print("erro")
+//        }
+        
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
-//    func prepareCell(character: CharacterModel, favoritesData: [CharacterModel]) {
-//        
-//        let isFavorite = favoritesData.contains(where: {$0.id == character.id})
-//        
-//        if isFavorite {
-//            favoriteCharacter.setImage(UIImage(named: "favorite_selected"), for: .normal)
-//        }
-//        
-//        nameCharacter.text = character.name
-//    }
-    
-//    func downloadImage(`with` urlString : String){
-//        guard let url = URL.init(string: urlString) else {
-//            return
-//        }
-//        let resource = ImageResource(downloadURL: url)
-//
-//        KingfisherManager.shared.retrieveImage(with: resource, options: nil, progressBlock: nil) { result in
-//            switch result {
-//            case .success(let value):
-//                print("Image: \(value.image). Got from: \(value.cacheType)")
-//            case .failure(let error):
-//                print("Error: \(error)")
-//            }
-//        }
-//    }
 }
