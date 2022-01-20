@@ -10,6 +10,9 @@
 		390C8C7BACFC76C9290062C5 /* Pods_Marvel_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1C841161F4EDCEF67838AE /* Pods_Marvel_App.framework */; };
 		77A2BC481B1DDD5509D05284 /* Pods_Marvel_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F79E074C7707D9C608E2A67F /* Pods_Marvel_AppTests.framework */; };
 		946F35D3D1EC30A0E4D4ADE2 /* Pods_Marvel_App_Marvel_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BEA1653E98D6DE7E8212CD0 /* Pods_Marvel_App_Marvel_AppUITests.framework */; };
+		EE2D83F427971D2F00E3A6AC /* ComicsSeriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2D83F327971D2F00E3A6AC /* ComicsSeriesModel.swift */; };
+		EE2D83F627977F2C00E3A6AC /* ResponseComicsSeriesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2D83F527977F2C00E3A6AC /* ResponseComicsSeriesDataModel.swift */; };
+		EE2D83FA27977FF400E3A6AC /* ApiComicsSeriesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2D83F927977FF400E3A6AC /* ApiComicsSeriesResponseModel.swift */; };
 		EE4D77282790CECA00358E2F /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D77272790CECA00358E2F /* CharacterModel.swift */; };
 		EE4D772A2790D20900358E2F /* ThumbnailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D77292790D20900358E2F /* ThumbnailModel.swift */; };
 		EE4D772C2790D3C400358E2F /* ApiResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D772B2790D3C400358E2F /* ApiResponseModel.swift */; };
@@ -71,6 +74,9 @@
 		8A1C841161F4EDCEF67838AE /* Pods_Marvel_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94B2E3DA742FBC170E60058F /* Pods-Marvel App-Marvel AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel App-Marvel AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-Marvel App-Marvel AppUITests/Pods-Marvel App-Marvel AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB43BCD05E9D12096BDA375D /* Pods-Marvel AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel AppTests.debug.xcconfig"; path = "Target Support Files/Pods-Marvel AppTests/Pods-Marvel AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE2D83F327971D2F00E3A6AC /* ComicsSeriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsSeriesModel.swift; sourceTree = "<group>"; };
+		EE2D83F527977F2C00E3A6AC /* ResponseComicsSeriesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseComicsSeriesDataModel.swift; sourceTree = "<group>"; };
+		EE2D83F927977FF400E3A6AC /* ApiComicsSeriesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiComicsSeriesResponseModel.swift; sourceTree = "<group>"; };
 		EE4D77272790CECA00358E2F /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
 		EE4D77292790D20900358E2F /* ThumbnailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailModel.swift; sourceTree = "<group>"; };
 		EE4D772B2790D3C400358E2F /* ApiResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponseModel.swift; sourceTree = "<group>"; };
@@ -162,6 +168,26 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		EE2D83F727977FBF00E3A6AC /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				EE2D83F927977FF400E3A6AC /* ApiComicsSeriesResponseModel.swift */,
+				EE2D83F327971D2F00E3A6AC /* ComicsSeriesModel.swift */,
+				EE2D83F527977F2C00E3A6AC /* ResponseComicsSeriesDataModel.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		EE2D83F827977FCB00E3A6AC /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				EE4D772B2790D3C400358E2F /* ApiResponseModel.swift */,
+				EE4D77272790CECA00358E2F /* CharacterModel.swift */,
+				EE4D772D2791256200358E2F /* ResponseDataModel.swift */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
 		EE4D77232790CD4300358E2F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,10 +203,9 @@
 		EE4D77262790CEB300358E2F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EE4D77272790CECA00358E2F /* CharacterModel.swift */,
+				EE2D83F827977FCB00E3A6AC /* Characters */,
+				EE2D83F727977FBF00E3A6AC /* Details */,
 				EE4D77292790D20900358E2F /* ThumbnailModel.swift */,
-				EE4D772B2790D3C400358E2F /* ApiResponseModel.swift */,
-				EE4D772D2791256200358E2F /* ResponseDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -581,6 +606,7 @@
 				EE972125278B8C6900CFEF47 /* CharactersCollectionView.swift in Sources */,
 				EE8D8E46278D15E6005906B6 /* DetailsScrollViewController.swift in Sources */,
 				EED94E05279370AF009706AD /* MarvelClient.swift in Sources */,
+				EE2D83F427971D2F00E3A6AC /* ComicsSeriesModel.swift in Sources */,
 				EE6DEB5B2792708C00DAD14E /* ConstantsRequest.swift in Sources */,
 				EE972137278B8CC500CFEF47 /* MainViewController.swift in Sources */,
 				EEA874D6277A534D0030A9AD /* AppDelegate.swift in Sources */,
@@ -596,6 +622,8 @@
 				EE972123278B8C6300CFEF47 /* button.swift in Sources */,
 				EE4D77282790CECA00358E2F /* CharacterModel.swift in Sources */,
 				EE97212D278B8C9E00CFEF47 /* EmptyCollectionViewCell.swift in Sources */,
+				EE2D83F627977F2C00E3A6AC /* ResponseComicsSeriesDataModel.swift in Sources */,
+				EE2D83FA27977FF400E3A6AC /* ApiComicsSeriesResponseModel.swift in Sources */,
 				EE4D772C2790D3C400358E2F /* ApiResponseModel.swift in Sources */,
 				EE6DEB6027927AF200DAD14E /* MarvelEndpoint.swift in Sources */,
 				EED54084278E755F00084D8F /* SeriesCollectionView.swift in Sources */,

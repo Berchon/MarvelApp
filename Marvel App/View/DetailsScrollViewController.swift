@@ -10,6 +10,7 @@ import Kingfisher
 
 class DetailsScrollViewController: UIViewController {
 
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var imageCard: UIImageView!
     @IBOutlet weak var CharacterName: UILabel!
     @IBOutlet weak var characterDescription: UILabel!
@@ -18,9 +19,13 @@ class DetailsScrollViewController: UIViewController {
     @IBOutlet weak var seriesCollection: SeriesCollectionView!
     
     var character: CharacterModel
+    var comics: [ComicsSeriesModel] = []
+    var series: [ComicsSeriesModel] = []
     
-    init(character: CharacterModel) {
+    init(character: CharacterModel, comics: [ComicsSeriesModel], series: [ComicsSeriesModel]) {
         self.character = character
+        self.comics = comics
+        self.series = series
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -35,15 +40,17 @@ class DetailsScrollViewController: UIViewController {
 
         navigationController?.viewControllers.last?.title = "Details"
         
-        let data: [String] = ["1 🏆", "2 🐸", "3 🍩", "4 😸", "5 🤡", "6 👾", "7 👻", "8 👩‍🎤", "9 🎸", "10 🍖", "11 🐯", "12 🌋"]
-        comicsCollection.setData(data: data)
-        seriesCollection.setData(data: [])
-        
         fillViewData()
     }
     
     
     func fillViewData() {
+        configureContentViewFrame(isEmpty: self.comics.isEmpty)
+        configureContentViewFrame(isEmpty: self.series.isEmpty)
+
+        comicsCollection.setData(data: self.comics)
+        seriesCollection.setData(data: self.series)
+        
         CharacterName.text = character.name
         characterDescription.text = character.verifiedDescription
         
@@ -53,14 +60,19 @@ class DetailsScrollViewController: UIViewController {
         }
     }
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configureContentViewFrame(isEmpty: Bool) {
+        let layout = comicsCollection.collectionViewLayout
+
+        let x = layout.collectionView?.frame.origin.x
+        let y = layout.collectionView?.frame.origin.y
+        var height = 200
+        let width = layout.collectionView?.frame.width
+
+        if isEmpty {
+            height = 50
+        }
+        layout.collectionView?.frame = CGRect(x: x!, y: y!, width: width!, height: CGFloat(height))
     }
-    */
 
 }

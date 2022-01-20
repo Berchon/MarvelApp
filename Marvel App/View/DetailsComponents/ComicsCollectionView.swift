@@ -9,8 +9,8 @@ import UIKit
 
 class ComicsCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var collectionData: [String] = []
-    let numberOfCol: Int = 3
+    var collectionData: [ComicsSeriesModel] = []
+    let numberOfCol: Int = 2
         
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -21,9 +21,6 @@ class ComicsCollectionView: UICollectionView, UICollectionViewDelegate, UICollec
 
     
     private func commonInit() {
-        // Popula com os dados a serem exibidos
-//        collectionData = ["1 🏆", "2 🐸", "3 🍩", "4 😸", "5 🤡", "6 👾", "7 👻", "8 👩‍🎤", "9 🎸", "10 🍖", "11 🐯", "12 🌋"]
-        
         let nib1 = UINib(nibName: "EmptyCollectionViewCell", bundle: nil)
         self.register(nib1, forCellWithReuseIdentifier: "EmptyCell")
         let nib2 = UINib(nibName: "CardCollectionViewCell", bundle: nil)
@@ -31,8 +28,12 @@ class ComicsCollectionView: UICollectionView, UICollectionViewDelegate, UICollec
     }
     
     
-    public func setData(data: [String]) {
+    public func setData(data: [ComicsSeriesModel]) {
         collectionData = data
+    }
+    
+    public func refreshData() {
+        self.reloadData()
     }
     
     
@@ -47,32 +48,12 @@ class ComicsCollectionView: UICollectionView, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionData.count == 0 {
-            configureContentViewFrame(isEmpty: true)
             return ConfigureEmptyCell(indexPath: indexPath)
         }
         
-        configureContentViewFrame(isEmpty: false)
         return ConfigureCell(indexPath: indexPath)
     }
     
-    
-    func configureContentViewFrame(isEmpty: Bool) {
-        let layout = self.collectionViewLayout as! UICollectionViewFlowLayout
-        
-        let spaceBetweenCells = Int(layout.minimumInteritemSpacing)
-        let totalSpaceBetweenColumns = (numberOfCol - 1) * spaceBetweenCells
-        let widthOfCell = (Int(self.frame.size.width) - totalSpaceBetweenColumns) / numberOfCol
-        
-        let x = layout.collectionView?.frame.origin.x
-        let y = layout.collectionView?.frame.origin.y
-        var height = Int(Double(widthOfCell) * 4 / 3)
-        let width = layout.collectionView?.frame.width
-        
-        if isEmpty {
-            height = 50
-        }
-        layout.collectionView?.frame = CGRect(x: x!, y: y!, width: width!, height: CGFloat(height))
-    }
     
     
     func ConfigureEmptyCell(indexPath: IndexPath) -> UICollectionViewCell {
@@ -100,9 +81,19 @@ class ComicsCollectionView: UICollectionView, UICollectionViewDelegate, UICollec
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 10
         
+        cell.favoriteCharacter.widthAnchor.constraint(equalToConstant: 0).isActive = true
+        
         numberOfColumns(numberOfCol: numberOfCol)
 
-        cell.nameCharacter.text = "\(collectionData[indexPath.row])"
+        let character: ComicsSeriesModel = self.collectionData[indexPath.row]
+
+        cell.nameCharacter.text = character.title
+        cell.id.text = String(character.id)
+
+        if let urlImage = URL(string: character.thumbnail.url){
+            cell.imageCharacter.kf.indicatorType = .activity
+            cell.imageCharacter.kf.setImage(with: urlImage, placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
+        }
         return cell
     }
     

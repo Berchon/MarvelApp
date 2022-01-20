@@ -8,7 +8,7 @@
 import UIKit
 
 class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavoriteViewDelegate {
-
+    
     override var nibName: String? {
         "MainViewController"
     }
@@ -21,6 +21,8 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
     
     var charactersData: [CharacterModel] = []
     var favoritesData: [CharacterModel] = []
+    var comicsData: [ComicsSeriesModel] = []
+    var seriesData: [ComicsSeriesModel] = []
     var offset: Int = 0
     var limit: Int = 20
     var total: Int = 0
@@ -101,14 +103,48 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
             }
         }
     }
+
+    
+    func loadDetailsData(character: CharacterModel) {
+        let id = character.id
+            MarvelClient.getDetails(id: id, complementPath: "comics") { results, error in
+                if(results != nil){
+                    self.comicsData = (results?.data.results)!
+                    
+                    MarvelClient.getDetails(id: id, complementPath: "series") { results, error in
+                        if(results != nil){
+                            self.seriesData = (results?.data.results)!
+                            
+//                            DispatchQueue.main.async {
+                                self.navigationController?.pushViewController(DetailsScrollViewController(character: character, comics: self.comicsData, series: self.seriesData), animated: true)
+//                            }
+                        }
+                        else{
+                            // Error
+                        }
+                    }
+                }
+                else{
+                    // Error
+                }
+            }
+            
+            
+        
+
+        
+    }
+    
+    func pushDetailsView(character: CharacterModel) {
+        loadDetailsData(character: character)
+//        DispatchQueue.main.async {
+//            self.navigationController?.pushViewController(DetailsScrollViewController(character: character, comics: self.comicsData, series: self.seriesData), animated: true)
+//        }
+    }
     
     func loadMoreData() {
         self.offset += self.limit
         loadCharactersData()
-    }
-    
-    func pushDetailsView(character: CharacterModel) {
-        navigationController?.pushViewController(DetailsScrollViewController(character: character), animated: true)
     }
     
     

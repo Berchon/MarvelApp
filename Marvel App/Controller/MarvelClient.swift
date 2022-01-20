@@ -39,4 +39,26 @@ class MarvelClient {
             }
         }
     }
+    
+    static func getDetails(id: Int, complementPath: String, completion: @escaping (ApiComicsSeriesResponseModel?, Error?) -> Void) {
+        performRequest(route: .details(characterId: id, complementPath: complementPath)) { response in
+            if response?.error == nil {
+                if let data = response?.data, let utf8Text = String(data: data, encoding: .utf8){
+                    let json = utf8Text.data(using: .utf8)
+                    do {
+                        let decoder = JSONDecoder()
+                        let decodeJson = try decoder.decode(ApiComicsSeriesResponseModel.self, from: json!)
+                        completion(decodeJson, nil)
+                    } catch {
+                        //treat error here
+                        completion(nil, error)
+                    }
+                }
+            }
+            else {
+                //treat error here
+                
+            }
+        }
+    }
 }

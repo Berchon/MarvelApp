@@ -13,6 +13,7 @@
                 <outlet property="CharacterName" destination="jYp-pZ-NhD" id="93t-oK-GFQ"/>
                 <outlet property="characterDescription" destination="azN-CG-VSK" id="fJ6-s0-jDt"/>
                 <outlet property="comicsCollection" destination="LmV-rV-xNJ" id="qc2-hF-NTK"/>
+                <outlet property="contentView" destination="qbY-nt-927" id="slx-Uu-5qF"/>
                 <outlet property="imageCard" destination="Dqn-IP-r42" id="8Ug-aa-lLK"/>
                 <outlet property="seriesCollection" destination="ZGg-pj-x4E" id="New-H0-5ZE"/>
                 <outlet property="view" destination="iN0-l3-epB" id="2qB-Jg-IeY"/>
@@ -50,7 +51,7 @@
                     <rect key="frame" x="0.0" y="249" width="414" height="647"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbY-nt-927" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="564.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="724.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5Z-Js-GdA">
                                     <rect key="frame" x="20" y="32" width="374" height="29"/>
@@ -72,10 +73,10 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="LmV-rV-xNJ" customClass="ComicsCollectionView" customModule="Marvel_App" customModuleProvider="target">
-                                    <rect key="frame" x="8" y="239.5" width="398" height="120"/>
-                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                    <rect key="frame" x="8" y="239.5" width="398" height="200"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="120" identifier="heightCollection" id="oky-1v-I0d"/>
+                                        <constraint firstAttribute="height" constant="200" identifier="heightCollection" id="oky-1v-I0d"/>
                                     </constraints>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Yz6-b9-8p7">
                                         <size key="itemSize" width="128" height="128"/>
@@ -85,16 +86,16 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Series" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9p-Uz-vwG">
-                                    <rect key="frame" x="20" y="391.5" width="374" height="29"/>
+                                    <rect key="frame" x="20" y="471.5" width="374" height="29"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                     <color key="textColor" red="0.96862745098039216" green="0.81176470588235294" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ZGg-pj-x4E" customClass="SeriesCollectionView" customModule="Marvel_App" customModuleProvider="target">
-                                    <rect key="frame" x="8" y="428.5" width="398" height="120"/>
-                                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                                    <rect key="frame" x="8" y="508.5" width="398" height="200"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="120" id="A6r-iw-Tss"/>
+                                        <constraint firstAttribute="height" constant="200" id="A6r-iw-Tss"/>
                                     </constraints>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pd5-LU-V7u">
                                         <size key="itemSize" width="128" height="128"/>
@@ -160,12 +161,6 @@
     </objects>
     <resources>
         <image name="Nil" width="405" height="400"/>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

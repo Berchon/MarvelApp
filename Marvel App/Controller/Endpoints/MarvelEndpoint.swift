@@ -10,7 +10,7 @@ import Alamofire
 enum MarvelEndpoint: APIConfiguration {
     case characters(offset: Int, limit: Int, startsWith: String)
     
-    case details(characterId: Int)
+    case details(characterId: Int, complementPath: String)
     
     
     var method: HTTPMethod {
@@ -39,8 +39,17 @@ enum MarvelEndpoint: APIConfiguration {
             let urlRequest = URLRequest(url: (urlComponents?.url)!)
             
             return urlRequest.url!.absoluteString
-        case .details(let characterId):
-            return ""
+            
+        case .details(let characterId, let complementPath):
+            var urlComponents = URLComponents(string: Constants.ProductionServer.basePath)
+            urlComponents?.path = Constants.ProductionServer.charactersPath + "/\(String(characterId))/\(complementPath)"
+            
+            urlComponents?.queryItems = []
+            urlComponents?.queryItems! += Authentication.getCredentials()
+            
+            let urlRequest = URLRequest(url: (urlComponents?.url)!)
+            
+            return urlRequest.url!.absoluteString
         }
     }
     
