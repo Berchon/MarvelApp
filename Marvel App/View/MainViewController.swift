@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavoriteViewDelegate {
     
@@ -20,12 +21,19 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
     @IBOutlet weak var favoritesCollection: FavoritesCollectionView!
     
     var charactersData: [CharacterModel] = []
-    var favoritesData: [CharacterModel] = []
+    var favoritesData: [FavoriteModel] = []
     var comicsData: [ComicsSeriesModel] = []
     var seriesData: [ComicsSeriesModel] = []
     var offset: Int = 0
     var limit: Int = 20
     var total: Int = 0
+    
+    var context: NSManagedObjectContext{
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }
+    
+    var storage = ManagerStorage.shared
     
     
     
@@ -79,6 +87,8 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
     }
     
     func loadFavoriteData() {
+        self.favoritesData = storage.getCharacters(context: context)
+        
         favoritesCollection.setData(data: self.favoritesData)
         charactersCollection.setFavorites(data: self.favoritesData)
     }
@@ -128,18 +138,10 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
                     // Error
                 }
             }
-            
-            
-        
-
-        
     }
     
     func pushDetailsView(character: CharacterModel) {
         loadDetailsData(character: character)
-//        DispatchQueue.main.async {
-//            self.navigationController?.pushViewController(DetailsScrollViewController(character: character, comics: self.comicsData, series: self.seriesData), animated: true)
-//        }
     }
     
     func loadMoreData() {
@@ -148,36 +150,47 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
     }
     
     
-    func isFavoritedNow(favorite: CharacterModel) {
-            if let index = self.favoritesData.firstIndex(where: {$0.id == favorite.id}) {
-                self.removeFavorites(index: index)
-                
-                self.favoritesCollection.setData(data: self.favoritesData)
-                self.charactersCollection.setFavorites(data: self.favoritesData)
-                return
+    func isFavoritedNow(favorite: FavoriteModel) {
+        if let index = self.favoritesData.firstIndex(where: {$0.id == favorite.id}) {
+            if self.removeFavorites(index: index) {
+//                self.favoritesCollection.setData(data: self.favoritesData)
+//                self.charactersCollection.setFavorites(data: self.favoritesData)
             }
-            self.addFavorites(favorite: favorite)
             
+            return
+        }
+        if self.addFavorites(favorite: favorite) {
             self.favoritesCollection.setData(data: self.favoritesData)
             self.charactersCollection.setFavorites(data: self.favoritesData)
-            return
+        }
+        
+        return
+    }
 
+    func removeFavorites(index: Int) -> Bool {
+        if storage.deleteCharacter(index: index, context: context) {
+            print("remove")
+            self.favoritesData.remove(at: index)
+            self.favoritesCollection.setData(data: self.favoritesData)
+            self.charactersCollection.setFavorites(data: self.favoritesData)
+            return true
+        }
+        
+        return false
     }
     
-    func removeFavorites(index: Int) {
-        print("remove")
-        self.favoritesData.remove(at: index)
-        favoritesCollection.setData(data: self.favoritesData)
-        charactersCollection.setFavorites(data: self.favoritesData)
-    }
-    
-    func addFavorites(favorite: CharacterModel) {
-        if let index = self.favoritesData.firstIndex(where: {$0.name > favorite.name}) {
-            self.favoritesData.insert(favorite, at: index)
+    func addFavorites(favorite: FavoriteModel) -> Bool {
+        if storage.putCharacter(favorite: favorite, context: context) {
+            if let index = self.favoritesData.firstIndex(where: {$0.name > favorite.name}) {
+                self.favoritesData.insert(favorite, at: index)
+            }
+            else {
+                self.favoritesData.append(favorite)
+            }
+            return true
         }
-        else {
-            self.favoritesData.append(favorite)
-        }
+        
+        return false
     }
 
     

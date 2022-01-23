@@ -8,14 +8,14 @@
 import UIKit
 
 protocol MyFavoriteViewDelegate: class {
-    func removeFavorites(index: Int)
+    func removeFavorites(index: Int) -> Bool
 }
 
 class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource {
     
     weak var delegation: MyFavoriteViewDelegate?
     
-    var collectionData: [CharacterModel] = []
+    var collectionData: [FavoriteModel] = []
     var textStatus: String = "Not found favorites."
         
     required init?(coder aDecoder: NSCoder) {
@@ -34,7 +34,7 @@ class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICol
     }
     
     
-    public func setData(data: [CharacterModel]) {
+    public func setData(data: [FavoriteModel]) {
         collectionData = data
         refreshData()
     }
@@ -88,20 +88,22 @@ class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICol
         
         numberOfColumns()
         
-        let character: CharacterModel = collectionData[indexPath.row]
+        let character: FavoriteModel = collectionData[indexPath.row]
         
         cell.favoriteCharacter.setImage(UIImage(named: "favorite_selected"), for: .normal)
         
         cell.nameCharacter.text = character.name
         cell.id.text = String(character.id)
 
-        if let urlImage = URL(string: character.thumbnail.url){
-            cell.imageCharacter.kf.indicatorType = .activity
-            cell.imageCharacter.kf.setImage(with: urlImage, placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
-        }
+        cell.imageCharacter.image = UIImage(data: character.image)
+//        if let urlImage = URL(string: character.thumbnail.url){
+//            cell.imageCharacter.kf.indicatorType = .activity
+//            cell.imageCharacter.kf.setImage(with: urlImage, placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
+//        }
         
         cell.favoriteTapAction = { cell in
-            self.delegation?.removeFavorites(index: indexPath.item)
+            let _ = self.delegation?.removeFavorites(index: indexPath.item)
+//            self.refreshData()
         }
         
         return cell

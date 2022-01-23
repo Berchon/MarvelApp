@@ -11,7 +11,7 @@ import Kingfisher
 protocol MyCollectionViewDelegate: class {
     func loadMoreData()
     func pushDetailsView(character: CharacterModel)
-    func isFavoritedNow(favorite: CharacterModel)
+    func isFavoritedNow(favorite: FavoriteModel)
 }
 
 class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource {
@@ -19,7 +19,7 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
     weak var delegation: MyCollectionViewDelegate?
     
     var collectionData: [CharacterModel] = []
-    var favoritesData: [CharacterModel] = []
+    var favoritesData: [FavoriteModel] = []
     var textStatus: String = "Not found characters."
     var total: Int = 0
         
@@ -43,7 +43,7 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
         self.total = total
     }
     
-    public func setFavorites(data: [CharacterModel]) {
+    public func setFavorites(data: [FavoriteModel]) {
         favoritesData = data
         self.refreshData()
     }
@@ -129,9 +129,12 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
             delegation?.loadMoreData()
         }
         
+        
+        
         cell.favoriteTapAction = { cell in
-            let favorite = character
-            self.delegation?.isFavoritedNow(favorite: favorite)
+            let image = cell.imageCharacter.image?.pngData()
+            let fav = FavoriteModel(id: Int32(character.id), name: character.name, image: image!)
+            self.delegation?.isFavoritedNow(favorite: fav)
         }
         
         return cell

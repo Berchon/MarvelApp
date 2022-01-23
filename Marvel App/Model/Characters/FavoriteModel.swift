@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct FavoriteModel: Codable {
+    let id: Int32
+    let name: String
+    let image: Data
+}

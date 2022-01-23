@@ -41,8 +41,8 @@
 		EEA874F0277A534E0030A9AD /* Marvel_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA874EF277A534E0030A9AD /* Marvel_AppTests.swift */; };
 		EEA874FA277A534E0030A9AD /* Marvel_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA874F9277A534E0030A9AD /* Marvel_AppUITests.swift */; };
 		EEA874FC277A534E0030A9AD /* Marvel_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA874FB277A534E0030A9AD /* Marvel_AppUITestsLaunchTests.swift */; };
-		EEAEFA1A278BCFD1003E051E /* DetailsViewController_old.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAEFA18278BCFD0003E051E /* DetailsViewController_old.swift */; };
-		EEAEFA1B278BCFD1003E051E /* DetailsViewController_old.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEAEFA19278BCFD1003E051E /* DetailsViewController_old.xib */; };
+		EEBC4C7D279B666B00C9EA1E /* ManagerStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBC4C7C279B666B00C9EA1E /* ManagerStorage.swift */; };
+		EEBC4C7F279BCBB600C9EA1E /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBC4C7E279BCBB600C9EA1E /* FavoriteModel.swift */; };
 		EED54084278E755F00084D8F /* SeriesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED54083278E755F00084D8F /* SeriesCollectionView.swift */; };
 		EED94DFF279369A2009706AD /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED94DFE279369A2009706AD /* Authentication.swift */; };
 		EED94E05279370AF009706AD /* MarvelClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED94E04279370AF009706AD /* MarvelClient.swift */; };
@@ -109,8 +109,8 @@
 		EEA874F5277A534E0030A9AD /* Marvel AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Marvel AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEA874F9277A534E0030A9AD /* Marvel_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marvel_AppUITests.swift; sourceTree = "<group>"; };
 		EEA874FB277A534E0030A9AD /* Marvel_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marvel_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		EEAEFA18278BCFD0003E051E /* DetailsViewController_old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController_old.swift; sourceTree = "<group>"; };
-		EEAEFA19278BCFD1003E051E /* DetailsViewController_old.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController_old.xib; sourceTree = "<group>"; };
+		EEBC4C7C279B666B00C9EA1E /* ManagerStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerStorage.swift; sourceTree = "<group>"; };
+		EEBC4C7E279BCBB600C9EA1E /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
 		EED54083278E755F00084D8F /* SeriesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesCollectionView.swift; sourceTree = "<group>"; };
 		EED94DFE279369A2009706AD /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		EED94E04279370AF009706AD /* MarvelClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelClient.swift; sourceTree = "<group>"; };
@@ -184,6 +184,7 @@
 				EE4D772B2790D3C400358E2F /* ApiResponseModel.swift */,
 				EE4D77272790CECA00358E2F /* CharacterModel.swift */,
 				EE4D772D2791256200358E2F /* ResponseDataModel.swift */,
+				EEBC4C7E279BCBB600C9EA1E /* FavoriteModel.swift */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
@@ -213,6 +214,7 @@
 		EE4D772F27912F0E00358E2F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				EEBC4C7C279B666B00C9EA1E /* ManagerStorage.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -257,7 +259,6 @@
 		EE9A02932787B74E0080B22C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EED54085278E9F4100084D8F /* old_files */,
 				EEAEFA1F278BE4BE003E051E /* DetailsComponents */,
 				EE6A1FFF2781424D002B5E1A /* Components */,
 				EE97211F278B8C3700CFEF47 /* CharactersComponents */,
@@ -333,15 +334,6 @@
 				EED54083278E755F00084D8F /* SeriesCollectionView.swift */,
 			);
 			path = DetailsComponents;
-			sourceTree = "<group>";
-		};
-		EED54085278E9F4100084D8F /* old_files */ = {
-			isa = PBXGroup;
-			children = (
-				EEAEFA19278BCFD1003E051E /* DetailsViewController_old.xib */,
-				EEAEFA18278BCFD0003E051E /* DetailsViewController_old.swift */,
-			);
-			path = old_files;
 			sourceTree = "<group>";
 		};
 		EED94E0027936EE4009706AD /* Authentication */ = {
@@ -471,7 +463,6 @@
 			files = (
 				EE97212F278B8C9E00CFEF47 /* EmptyCollectionViewCell.xib in Resources */,
 				EE8D8E48278D1614005906B6 /* DetailsScrollViewController.xib in Resources */,
-				EEAEFA1B278BCFD1003E051E /* DetailsViewController_old.xib in Resources */,
 				EEA874E5277A534E0030A9AD /* LaunchScreen.storyboard in Resources */,
 				EE972135278B8CC500CFEF47 /* MainViewController.xib in Resources */,
 				EE97212C278B8C9E00CFEF47 /* CardCollectionViewCell.xib in Resources */,
@@ -616,8 +607,8 @@
 				EE97212E278B8C9E00CFEF47 /* CardCollectionViewCell.swift in Sources */,
 				EE8D8E40278CC67D005906B6 /* ComicsCollectionView.swift in Sources */,
 				EE972121278B8C5900CFEF47 /* SearchBar.swift in Sources */,
+				EEBC4C7F279BCBB600C9EA1E /* FavoriteModel.swift in Sources */,
 				EEA874D8277A534D0030A9AD /* SceneDelegate.swift in Sources */,
-				EEAEFA1A278BCFD1003E051E /* DetailsViewController_old.swift in Sources */,
 				EE972127278B8C7900CFEF47 /* FavoritesCollectionView.swift in Sources */,
 				EE972123278B8C6300CFEF47 /* button.swift in Sources */,
 				EE4D77282790CECA00358E2F /* CharacterModel.swift in Sources */,
@@ -627,6 +618,7 @@
 				EE4D772C2790D3C400358E2F /* ApiResponseModel.swift in Sources */,
 				EE6DEB6027927AF200DAD14E /* MarvelEndpoint.swift in Sources */,
 				EED54084278E755F00084D8F /* SeriesCollectionView.swift in Sources */,
+				EEBC4C7D279B666B00C9EA1E /* ManagerStorage.swift in Sources */,
 				EE6DEB5D279279F800DAD14E /* APIConfiguration.swift in Sources */,
 				EE4D772A2790D20900358E2F /* ThumbnailModel.swift in Sources */,
 			);

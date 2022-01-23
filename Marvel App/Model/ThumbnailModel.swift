@@ -8,8 +8,8 @@
 import Foundation
 
 struct ThumbnailModel: Codable {
-    let path: String
-    let ext: String
+    var path: String
+    var ext: String
     var url: String{
         return path + "." + ext
     }
