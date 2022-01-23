@@ -8,11 +8,12 @@
 import UIKit
 import Kingfisher
 
-protocol MyCollectionViewDelegate: class {
+protocol MyCollectionViewDelegate: AnyObject {
     func loadMoreData()
     func pushDetailsView(character: CharacterModel)
     func isFavoritedNow(favorite: FavoriteModel)
 }
+
 
 class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -38,15 +39,18 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
         self.register(nib2, forCellWithReuseIdentifier: "CardCell")
     }
     
+    
     public func setData(data: [CharacterModel], total: Int) {
         collectionData = data
         self.total = total
     }
     
+    
     public func setFavorites(data: [FavoriteModel]) {
         favoritesData = data
         self.refreshData()
     }
+    
     
     public func refreshData() {
         self.reloadData()
@@ -61,9 +65,9 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionData.count == 0 {
-//
             return 1
         }
+        
         self.textStatus = "Not found character."
         return collectionData.count
     }
@@ -129,8 +133,6 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
             delegation?.loadMoreData()
         }
         
-        
-        
         cell.favoriteTapAction = { cell in
             let image = cell.imageCharacter.image?.pngData()
             let fav = FavoriteModel(id: Int32(character.id), name: character.name, image: image!)
@@ -148,5 +150,4 @@ class CharactersCollectionView: UICollectionView, UICollectionViewDelegate, UICo
         let width = (Int(self.frame.size.width) - totalSpaceBetweenColumns) / numberOfCol
         layout.itemSize = CGSize(width: width, height: Int(Double(width) * 4 / 3))
     }
-
 }

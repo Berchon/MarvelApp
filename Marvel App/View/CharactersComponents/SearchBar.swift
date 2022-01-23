@@ -29,10 +29,10 @@ class SearchBar: UISearchBar {
         self.backgroundColor = translucentWhite
         
         self.tintColor =  newGray //Cursor
-        self.searchTextField.textColor = newGray //Cor do Texto
+        self.searchTextField.textColor = newGray //text color
 
-        self.searchTextField.backgroundColor = translucentWhite_15 //Cor do fundo do texto
-        self.searchTextField.leftView?.tintColor = newGray //Cor da figura da esquerda do search bar
+        self.searchTextField.backgroundColor = translucentWhite_15 //background text color
+        self.searchTextField.leftView?.tintColor = newGray //left image color of search bar
     }
 
 }

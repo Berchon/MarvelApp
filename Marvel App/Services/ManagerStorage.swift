@@ -13,15 +13,6 @@ public class ManagerStorage {
     public static let shared = ManagerStorage()
     var favorites: [StorageData] = []
     
-//    func returnStorageObject(character: FavoriteModel, context: NSManagedObjectContext) -> NSManagedObject {
-//        let storageData = NSEntityDescription.insertNewObject(forEntityName: "StorageData", into: context)
-//
-//        storageData.setValue(character.id, forKey: "id")
-//        storageData.setValue(character.name, forKey: "name")
-//        storageData.setValue(character.image, forKey: "image")
-//
-//        return storageData
-//    }
     
     func putCharacter(favorite: FavoriteModel, context: NSManagedObjectContext) -> Bool {
         let newFavorite: StorageData = StorageData(context: context)

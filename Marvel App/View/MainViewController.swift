@@ -36,7 +36,6 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
     var storage = ManagerStorage.shared
     
     
-    
     @IBAction func SearchButtonTapAction(_ sender: Any) {
         guard let startsWith = searchBar.text else { return }
         print(startsWith)
@@ -50,6 +49,7 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
         
         loadCharactersData(nameStartsWith: startsWith)
     }
+    
     
     @IBAction func reloadData(_ sender: Any) {
         self.offset = 0
@@ -85,6 +85,7 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
         charactersCollection.setData(data: self.charactersData, total: 0)
         favoritesCollection.setData(data: self.favoritesData)
     }
+    
     
     func loadFavoriteData() {
         self.favoritesData = storage.getCharacters(context: context)
@@ -124,10 +125,7 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
                     MarvelClient.getDetails(id: id, complementPath: "series") { results, error in
                         if(results != nil){
                             self.seriesData = (results?.data.results)!
-                            
-//                            DispatchQueue.main.async {
-                                self.navigationController?.pushViewController(DetailsScrollViewController(character: character, comics: self.comicsData, series: self.seriesData), animated: true)
-//                            }
+                            self.navigationController?.pushViewController(DetailsScrollViewController(character: character, comics: self.comicsData, series: self.seriesData), animated: true)
                         }
                         else{
                             // Error
@@ -140,9 +138,11 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
             }
     }
     
+    
     func pushDetailsView(character: CharacterModel) {
         loadDetailsData(character: character)
     }
+    
     
     func loadMoreData() {
         self.offset += self.limit
@@ -153,8 +153,7 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
     func isFavoritedNow(favorite: FavoriteModel) {
         if let index = self.favoritesData.firstIndex(where: {$0.id == favorite.id}) {
             if self.removeFavorites(index: index) {
-//                self.favoritesCollection.setData(data: self.favoritesData)
-//                self.charactersCollection.setFavorites(data: self.favoritesData)
+
             }
             
             return
@@ -166,10 +165,10 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
         
         return
     }
+    
 
     func removeFavorites(index: Int) -> Bool {
         if storage.deleteCharacter(index: index, context: context) {
-            print("remove")
             self.favoritesData.remove(at: index)
             self.favoritesCollection.setData(data: self.favoritesData)
             self.charactersCollection.setFavorites(data: self.favoritesData)
@@ -178,6 +177,7 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
         
         return false
     }
+    
     
     func addFavorites(favorite: FavoriteModel) -> Bool {
         if storage.putCharacter(favorite: favorite, context: context) {
@@ -213,5 +213,4 @@ class MainViewController: UITabBarController, MyCollectionViewDelegate, MyFavori
         navigationController?.navigationBar.barTintColor = .black
         navigationController?.navigationBar.tintColor = UIColor(red: 247/255, green: 207/255, blue: 70/255, alpha: 1)
     }
-
 }

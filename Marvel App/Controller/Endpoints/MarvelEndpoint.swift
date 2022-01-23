@@ -20,6 +20,7 @@ enum MarvelEndpoint: APIConfiguration {
         }
     }
     
+    
     var path: String {
         switch self {
         case .characters(let offset, let limit, let startsWith):
@@ -53,12 +54,14 @@ enum MarvelEndpoint: APIConfiguration {
         }
     }
     
+    
     var parameters: Parameters? {
         switch self {
         case .characters, .details:
             return nil
         }
     }
+    
     
     func asURLRequest() throws -> URLRequest {
         let urlComponents = URLComponents(string: path)

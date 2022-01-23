@@ -18,6 +18,7 @@ class MarvelClient {
         }
     }
     
+    
     static func getCharacters(offset: Int, limit: Int, startsWith: String, completion: @escaping (ApiResponseModel?, Error?) -> Void) {
         performRequest(route: .characters(offset: offset, limit: limit, startsWith: startsWith)) { response in
             if response?.error == nil {
@@ -28,7 +29,6 @@ class MarvelClient {
                         let decodeJson = try decoder.decode(ApiResponseModel.self, from: json!)
                         completion(decodeJson, nil)
                     } catch {
-                        //treat error here
                         completion(nil, error)
                     }
                 }
@@ -39,6 +39,7 @@ class MarvelClient {
             }
         }
     }
+    
     
     static func getDetails(id: Int, complementPath: String, completion: @escaping (ApiComicsSeriesResponseModel?, Error?) -> Void) {
         performRequest(route: .details(characterId: id, complementPath: complementPath)) { response in

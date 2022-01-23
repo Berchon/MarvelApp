@@ -7,9 +7,10 @@
 
 import UIKit
 
-protocol MyFavoriteViewDelegate: class {
+protocol MyFavoriteViewDelegate: AnyObject {
     func removeFavorites(index: Int) -> Bool
 }
+
 
 class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -96,14 +97,9 @@ class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICol
         cell.id.text = String(character.id)
 
         cell.imageCharacter.image = UIImage(data: character.image)
-//        if let urlImage = URL(string: character.thumbnail.url){
-//            cell.imageCharacter.kf.indicatorType = .activity
-//            cell.imageCharacter.kf.setImage(with: urlImage, placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
-//        }
         
         cell.favoriteTapAction = { cell in
             let _ = self.delegation?.removeFavorites(index: indexPath.item)
-//            self.refreshData()
         }
         
         return cell
@@ -117,5 +113,4 @@ class FavoritesCollectionView: UICollectionView, UICollectionViewDelegate, UICol
         let width = (Int(self.frame.size.width) - totalSpaceBetweenColumns) / numberOfCol
         layout.itemSize = CGSize(width: width, height: Int(Double(width) * 4 / 3))
     }
-
 }

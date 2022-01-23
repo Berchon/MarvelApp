@@ -22,6 +22,7 @@ class DetailsScrollViewController: UIViewController {
     var comics: [ComicsSeriesModel] = []
     var series: [ComicsSeriesModel] = []
     
+    
     init(character: CharacterModel, comics: [ComicsSeriesModel], series: [ComicsSeriesModel]) {
         self.character = character
         self.comics = comics
@@ -29,6 +30,7 @@ class DetailsScrollViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
     }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -73,6 +75,8 @@ class DetailsScrollViewController: UIViewController {
             height = 50
         }
         layout.collectionView?.frame = CGRect(x: x!, y: y!, width: width!, height: CGFloat(height))
+
     }
+    
 
 }
